@@ -20,6 +20,7 @@ import {
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
+import { FddComponent } from './pages/agile/fdd/fdd.component';
 
 @NgModule({
   declarations: [AppComponent],

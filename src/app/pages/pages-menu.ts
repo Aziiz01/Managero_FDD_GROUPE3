@@ -6,6 +6,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'clipboard-outline',
     children: [
       {
+        title: 'Feature-Driven Development (FDD)',
+        link: '/pages/fdd',
+      },
+      {
         title: 'Scaled Agile Framework (SAFe)',
         link: '/pages/agile/safe',
       },
