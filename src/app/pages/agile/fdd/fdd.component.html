@@ -5,7 +5,9 @@ Feature-Driven Development (FDD) - A Comprehensive Tutorial
       <div id="introduction" class="section">
         <h2 class="section-title">Introduction to Feature-Driven Development (FDD)</h2>
         <p>Feature-Driven Development (FDD) is an agile methodology focused on delivering tangible, working features in a systematic and incremental manner. Unlike other agile methodologies that emphasize flexibility and adaptability, FDD is centered around a feature-centric approach that ensures high-value features are delivered promptly. This guide will provide a detailed overview of FDD, including its advantages, limitations, key processes, and practical applications.</p>
-      </div>
+        <img src="assets/images/fdd_overview.png" alt="Overview of FDD" class="image">
+
+    </div>
   
       <div id="why" class="section">
         <h2 class="section-title">Why: The Importance of Delivering High-Value Features Quickly</h2>
@@ -34,141 +36,103 @@ Feature-Driven Development (FDD) - A Comprehensive Tutorial
       </div>
   
       <div id="what" class="section">
-        <h3 class="section-title">What: Key Processes and Practices of Feature-Driven Development</h3>
-        <h2>Overview of FDD Processes
-        </h2>
-           <h4>FDD consists of five main processes:</h4>
-            <ul>
- 
-<li>           Develop an Overall Model: Establish a high-level understanding of the system by creating an overall model that serves as a foundation for subsequent feature development.
-</li>  
-<li>      Build a Feature List: Break down the overall model into a comprehensive list of features. Each feature should be a small, client-valued function that can be developed within a short period.
-</li>  <li>            Plan by Feature: Create a development plan based on the feature list. This plan should prioritize features based on their value and dependencies.
-</li>  <li>            Design by Feature: Design each feature in detail before implementation. This includes creating detailed design documents and conducting design inspections.
-</li>
-<li>            Build by Feature: Implement and test each feature iteratively. This involves coding, unit testing, integration, and validation to ensure the feature works as intended.
-</li>            </ul>
-               <h4> Key Practices in FDD</h4>
-               <ul>
-<li>         Domain Object Modeling: Focus on creating domain models that accurately represent the problem space.
-</li>     <li>   Development by Feature: Ensure that each feature is developed, tested, and integrated before moving on to the next one.
-</li>  <li>            Inspections: Regular code and design inspections to maintain quality and consistency.
-</li>  <li>            Configuration Management: Maintain version control and manage configurations to keep track of changes.
-</li><li>            Regular Builds: Frequent builds and integration to ensure continuous progress and early detection of issues.
-</li>
-        </ul> </div>
+        <h2 class="section-title">What: Key Processes and Practices of Feature-Driven Development</h2>
+        <p>FDD consists of five main processes:</p>
+        <ol>
+          <li>Develop an Overall Model: Establish a high-level understanding of the system by creating an overall model that serves as a foundation for subsequent feature development.</li>
+          <li>Build a Feature List: Break down the overall model into a comprehensive list of features. Each feature should be a small, client-valued function that can be developed within a short period.</li>
+          <li>Plan by Feature: Create a development plan based on the feature list. This plan should prioritize features based on their value and dependencies.</li>
+          <li>Design by Feature: Design each feature in detail before implementation. This includes creating detailed design documents and conducting design inspections.</li>
+          <li>Build by Feature: Implement and test each feature iteratively. This involves coding, unit testing, integration, and validation to ensure the feature works as intended.</li>
+        </ol>
+        <p>Key practices in FDD include domain object modeling, development by feature, inspections, configuration management, and regular builds.</p>
+        <img src="assets/images/fdd-feature-list.webp" alt="Feature List in FDD" class="image">
+      </div>
   
-        <div id="how" class="section">
-            <h2 class="section-title">How: Practical Application of FDD with Examples</h2>
-            <h3>Step-by-Step Application</h3>
-            <p>Let's explore the practical application of FDD through a step-by-step example of developing an e-commerce application.</p>
-            
-            <h4>1. Develop an Overall Model</h4>
-            <p>Create an overall model that includes entities like <code>Customer</code>, <code>Order</code>, <code>Product</code>, and <code>Payment</code>. This model serves as a high-level blueprint for the system.</p>
-      
-            <h4>2. Build a Feature List</h4>
-            <p>Break down the e-commerce application into features. Examples of features include:</p>
-            <ul>
-              <li><code>Add Product to Cart</code></li>
-              <li><code>Process Payment</code></li>
-              <li><code>Generate Invoice</code></li>
-              <li><code>User Registration</code></li>
-              <li><code>User Login</code></li>
-            </ul>
-      
-            <h4>3. Plan by Feature</h4>
-            <p>Create a development plan based on the feature list. Prioritize features such as <code>User Registration</code> and <code>User Login</code> to be developed first, followed by <code>Product Browsing</code> and <code>Shopping Cart Management</code>.</p>
-      
-            <h4>4. Design by Feature</h4>
-            <p>Design each feature in detail before implementation. For the <code>Add Product to Cart</code> feature, design the necessary UI components, backend logic, and database interactions. Conduct design inspections to ensure completeness and accuracy.</p>
-      
-            <h4>5. Build by Feature</h4>
-            <p>Implement and test each feature iteratively. For the <code>Add Product to Cart</code> feature:</p>
-            <ul>
-              <li>Write the required code for the UI and backend.</li>
-              <li>Perform unit tests to ensure the feature works as intended.</li>
-              <li>Integrate the feature with the existing system.</li>
-              <li>Conduct acceptance tests to validate the feature.</li>
-            </ul>
-      
-            <h3>Case Study: E-commerce Application</h3>
-            <p>Consider an e-commerce platform with the following development steps:</p>
-            <h4>Overall Model</h4>
-            <p>Identify key entities and their relationships, such as <code>Customer</code>, <code>Product</code>, <code>Order</code>, and <code>Payment</code>.</p>
-      
-            <h4>Feature List</h4>
-            <p>Identify features such as:</p>
-            <ul>
-              <li><code>User Authentication</code></li>
-              <li><code>Product Management</code></li>
-              <li><code>Order Processing</code></li>
-              <li><code>Payment Gateway Integration</code></li>
-            </ul>
-      
-            <h4>Planning</h4>
-            <p>Prioritize user authentication and product management features. Plan the development of <code>User Registration</code> and <code>User Login</code> features first.</p>
-      
-            <h4>Design</h4>
-            <p>Detail the design of each feature with diagrams and specifications. For example, for the <code>User Registration</code> feature, design the registration form, backend validation logic, and database schema.</p>
-      
-            <h4>Implementation</h4>
-            <p>Develop, test, and integrate each feature iteratively. For <code>User Registration</code>:</p>
-            <ul>
-              <li>Develop the registration form and backend logic.</li>
-              <li>Conduct unit tests to ensure functionality.</li>
-              <li>Integrate with the existing authentication system.</li>
-              <li>Perform acceptance tests to validate the feature.</li>
-            </ul>
-          </div>
   
-          <div id="what-if" class="section">
-            <h2 class="section-title">What If: Adaptations of FDD for Different Projects</h2>
-            <p>Feature-Driven Development (FDD) is versatile and can be adapted to various types of projects, each with unique requirements and challenges. Here are some scenarios and how FDD can be tailored to fit them:</p>
-          
-            <h3>1. Large-Scale Enterprise Systems</h3>
-            <p>For large-scale enterprise systems, FDD’s structured and feature-centric approach helps manage complexity and ensures high-value features are delivered promptly. Adaptations might include:</p>
-            <ul>
-              <li><strong>Extended Planning:</strong> Detailed initial modeling and extended feature planning phases to accommodate the complexity of enterprise systems.</li>
-              <li><strong>Feature Teams:</strong> Creation of multiple feature teams to work on different parts of the system concurrently, ensuring parallel development streams.</li>
-              <li><strong>Integration Points:</strong> Frequent integration points to ensure that various components developed by different teams work together seamlessly.</li>
-            </ul>
-          
-            <h3>2. Startups and Small Projects</h3>
-            <p>Startups and small projects benefit from FDD’s focus on rapid delivery and customer-centric development. Adaptations might include:</p>
-            <ul>
-              <li><strong>Lightweight Modeling:</strong> Simplified initial modeling to quickly start feature development and iterate based on feedback.</li>
-              <li><strong>Minimal Documentation:</strong> Reducing the amount of documentation to maintain agility and speed, focusing instead on delivering working features.</li>
-              <li><strong>Flexible Planning:</strong> Adapting the planning phase to be more flexible and responsive to change, allowing for quick pivots based on market feedback.</li>
-            </ul>
-          
-            <h3>3. Legacy System Modernization</h3>
-            <p>When modernizing legacy systems, FDD can be used to incrementally add new features while refactoring existing code. Adaptations might include:</p>
-            <ul>
-              <li><strong>Incremental Refactoring:</strong> Incorporating refactoring tasks into the feature list to gradually improve the legacy codebase while adding new features.</li>
-              <li><strong>Backward Compatibility:</strong> Ensuring that new features maintain backward compatibility with existing systems until full migration is achieved.</li>
-              <li><strong>Risk Management:</strong> Close monitoring and management of risks associated with integrating new features into the legacy system.</li>
-            </ul>
-          
-            <h3>4. Distributed Teams</h3>
-            <p>For projects involving distributed teams, FDD’s clear structure and defined processes can help manage coordination and communication. Adaptations might include:</p>
-            <ul>
-              <li><strong>Clear Communication Channels:</strong> Establishing robust communication channels and tools to ensure consistent and clear communication across distributed teams.</li>
-              <li><strong>Regular Syncs:</strong> Scheduling regular synchronization meetings to keep all team members aligned and address any issues promptly.</li>
-              <li><strong>Distributed Version Control:</strong> Utilizing distributed version control systems to manage code contributions from multiple locations effectively.</li>
-            </ul>
-          
-            <h3>5. Regulated Industries</h3>
-            <p>In regulated industries, compliance and documentation are critical. FDD can be adapted to ensure that all regulatory requirements are met. Adaptations might include:</p>
-            <ul>
-              <li><strong>Comprehensive Documentation:</strong> Ensuring that all features are thoroughly documented to meet regulatory standards.</li>
-              <li><strong>Compliance Reviews:</strong> Incorporating compliance reviews into the design and build phases to ensure that all regulatory requirements are addressed early.</li>
-              <li><strong>Audit Trails:</strong> Maintaining detailed audit trails of all changes and feature implementations to provide transparency and accountability.</li>
-            </ul>
-          
-            <h3>Conclusion</h3>
-            <p>Feature-Driven Development is a flexible and adaptable methodology that can be tailored to fit the needs of various projects and industries. By understanding the unique challenges and requirements of different scenarios, teams can effectively implement FDD to deliver high-value features in a structured and efficient manner.</p>
-          </div>
-          
+      <div id="how" class="section">
+        <h2 class="section-title">How: Practical Application of FDD with Examples</h2>
+        <h3>Step-by-Step Application</h3>
+        <p>Let's explore the practical application of FDD through a step-by-step example of developing an e-commerce application.</p>
+        
+        <h4>1. Develop an Overall Model</h4>
+        <p>Create an overall model that includes entities like <code>Customer</code>, <code>Order</code>, <code>Product</code>, and <code>Payment</code>. This model serves as a high-level blueprint for the system.</p>
+        <img src="assets/images/fdd-overall-model.png" alt="Overall Model in FDD" class="image">
+  
+        <h4>2. Build a Feature List</h4>
+        <p>Break down the e-commerce application into features. Examples of features include:</p>
+        <ul>
+          <li><code>Add Product to Cart</code></li>
+          <li><code>Process Payment</code></li>
+          <li><code>Generate Invoice</code></li>
+          <li><code>User Registration</code></li>
+          <li><code>User Login</code></li>
+        </ul>
+  
+        <h4>3. Plan by Feature</h4>
+        <p>Create a development plan based on the feature list. Prioritize features such as <code>User Registration</code> and <code>User Login</code> to be developed first, followed by <code>Product Browsing</code> and <code>Shopping Cart Management</code>.</p>
+  
+        <h4>4. Design by Feature</h4>
+        <p>Design each feature in detail before implementation. For the <code>Add Product to Cart</code> feature, design the necessary UI components, backend logic, and database interactions. Conduct design inspections to ensure completeness and accuracy.</p>
+        <img src="assets/images/fdd-design-by-feature.png" alt="Design by Feature in FDD" class="image">
+  
+        <h4>5. Build by Feature</h4>
+        <p>Implement and test each feature iteratively. For the <code>Add Product to Cart</code> feature:</p>
+        <ul>
+          <li>Write the required code for the UI and backend.</li>
+          <li>Perform unit tests to ensure the feature works as intended.</li>
+          <li>Integrate the feature with the existing system.</li>
+          <li>Conduct acceptance tests to validate the feature.</li>
+        </ul>
+        <img src="assets/images/fdd-build-by-feature.png" alt="Build by Feature in FDD" class="image">
+      </div>
+  
+      <div id="what-if" class="section">
+        <h2 class="section-title">What If: Adaptations of FDD for Different Projects</h2>
+        <p>Feature-Driven Development (FDD) is versatile and can be adapted to various types of projects, each with unique requirements and challenges. Here are some scenarios and how FDD can be tailored to fit them:</p>
+  
+        <h3>1. Large-Scale Enterprise Systems</h3>
+        <p>For large-scale enterprise systems, FDD’s structured and feature-centric approach helps manage complexity and ensures high-value features are delivered promptly. Adaptations might include:</p>
+        <ul>
+          <li><strong>Extended Planning:</strong> Detailed initial modeling and extended feature planning phases to accommodate the complexity of enterprise systems.</li>
+          <li><strong>Feature Teams:</strong> Creation of multiple feature teams to work on different parts of the system concurrently, ensuring parallel development streams.</li>
+          <li><strong>Integration Points:</strong> Frequent integration points to ensure that various components developed by different teams work together seamlessly.</li>
+        </ul>
+  
+        <h3>2. Startups and Small Projects</h3>
+        <p>Startups and small projects benefit from FDD’s focus on rapid delivery and customer-centric development. Adaptations might include:</p>
+        <ul>
+          <li><strong>Lightweight Modeling:</strong> Simplified initial modeling to quickly start feature development and iterate based on feedback.</li>
+          <li><strong>Minimal Documentation:</strong> Reducing the amount of documentation to maintain agility and speed, focusing instead on delivering working features.</li>
+          <li><strong>Flexible Planning:</strong> Adapting the planning phase to be more flexible and responsive to change, allowing for quick pivots based on market feedback.</li>
+        </ul>
+  
+        <h3>3. Legacy System Modernization</h3>
+        <p>When modernizing legacy systems, FDD can be used to incrementally add new features while refactoring existing code. Adaptations might include:</p>
+        <ul>
+          <li><strong>Incremental Refactoring:</strong> Incorporating refactoring tasks into the feature list to gradually improve the legacy codebase while adding new features.</li>
+          <li><strong>Backward Compatibility:</strong> Ensuring that new features maintain backward compatibility with existing systems until full migration is achieved.</li>
+          <li><strong>Risk Management:</strong> Close monitoring and management of risks associated with integrating new features into the legacy system.</li>
+        </ul>
+  
+        <h3>4. Distributed Teams</h3>
+        <p>For projects involving distributed teams, FDD’s clear structure and defined processes can help manage coordination and communication. Adaptations might include:</p>
+        <ul>
+          <li><strong>Clear Communication Channels:</strong> Establishing robust communication channels and tools to ensure consistent and clear communication across distributed teams.</li>
+          <li><strong>Regular Syncs:</strong> Scheduling regular synchronization meetings to keep all team members aligned and address any issues promptly.</li>
+          <li><strong>Distributed Version Control:</strong> Utilizing distributed version control systems to manage code contributions from multiple locations effectively.</li>
+        </ul>
+  
+        <h3>5. Regulated Industries</h3>
+        <p>In regulated industries, compliance and documentation are critical. FDD can be adapted to ensure that all regulatory requirements are met. Adaptations might include:</p>
+        <ul>
+          <li><strong>Comprehensive Documentation:</strong> Ensuring that all features are thoroughly documented to meet regulatory standards.</li>
+          <li><strong>Compliance Reviews:</strong> Incorporating compliance reviews into the design and build phases to ensure that all regulatory requirements are addressed early.</li>
+          <li><strong>Audit Trails:</strong> Maintaining detailed audit trails of all changes and feature implementations to provide transparency and accountability.</li>
+        </ul>
+  
+        <h3>Conclusion</h3>
+        <p>Feature-Driven Development is a flexible and adaptable methodology that can be tailored to fit the needs of various projects and industries. By understanding the unique challenges and requirements of different scenarios, teams can effectively implement FDD to deliver high-value features in a structured and efficient manner.</p>
+      </div>
     </div>
   </div>
-  

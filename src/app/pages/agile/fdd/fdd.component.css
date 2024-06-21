@@ -12,4 +12,11 @@
   .section {
     margin-bottom: 40px;
   }
+  .image {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+  }
+  
   
