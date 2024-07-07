@@ -1,0 +1,200 @@
+
+      <nb-stepper orientation="horizontal">
+        <nb-step label="Why">
+          <ng-template #labelOne>Why</ng-template>
+          <div id="introduction" class="section">
+            <h2 class="section-title">Introduction to Feature-Driven Development (FDD)</h2>
+            <p style="margin-top: 20px;">Feature-Driven Development (FDD) is an agile methodology that delivers working features systematically and incrementally. Unlike other agile methods, FDD focuses on a feature-centric approach to ensure prompt delivery of high-value features. This guide offers a detailed overview of FDD, including its benefits, limitations, key processes, and practical applications.</p>
+            <img src="assets/images/fdd_overview.png" alt="Overview of FDD" class="image responsive-image">
+    
+        </div>
+      
+          <div style="margin-top: 20px;" id="why" class="section">
+            <h2 style="margin-bottom: 20px;" class="section-title">Why: The Importance of Delivering High-Value Features Quickly</h2>
+            <nb-accordion multi style="margin-bottom: 50px;">
+                <nb-accordion-item>
+                  <nb-accordion-item-header>
+                    Importance of FDD 
+                  </nb-accordion-item-header>
+                  <nb-accordion-item-body>
+                    <ul>
+                        <li><span class="highlight">Rapid Delivery:</span> In today’s fast-paced development environment, the ability to deliver functional features quickly is critical. FDD ensures that valuable features are developed and delivered in short, iterative cycles, enhancing customer satisfaction and project momentum.</li>
+                        <li><span class="highlight">Customer Satisfaction:</span> By focusing on delivering features that are of high value to the customer, FDD ensures that the development process is aligned with customer needs and business goals.</li>
+                        <li><span class="highlight">Risk Mitigation:</span> Short development cycles allow for frequent reassessment and adjustment, reducing the risk of large-scale project failures and ensuring that the development process remains aligned with changing requirements.</li>
+                      </ul>
+                      
+                  </nb-accordion-item-body>
+                </nb-accordion-item>
+              
+                <nb-accordion-item>
+                  <nb-accordion-item-header>
+                    Advantages and Limitations of FDD
+                  </nb-accordion-item-header>
+                  <nb-accordion-item-body>
+                    <table class="styled-table">
+                      <thead>
+                        <tr>
+                          <th>Advantages</th>
+                          <th>Limitations</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><span class="highlight">Scalability:</span> FDD is suitable for large and complex projects due to its structured and scalable approach. It breaks down projects into manageable pieces, making it easier to handle complexity.</td>
+                          <td><span class="highlight">Documentation Requirement:</span> FDD requires detailed documentation, which can be time-consuming and may seem contrary to the principles of lightweight documentation in agile methodologies.</td>
+                        </tr>
+                        <tr>
+                          <td><span class="highlight">Predictability:</span> The methodical nature of FDD, with its focus on planning and design before implementation, provides a predictable framework for development, making it easier to estimate timelines and resources.</td>
+                          <td><span class="highlight">Complex Initial Setup:</span> The initial phase of developing an overall model and building a comprehensive feature list can be complex and time-consuming.</td>
+                        </tr>
+                        <tr>
+                          <td><span class="highlight">High-Quality Output:</span> Through practices like regular inspections and detailed design, FDD ensures high-quality code and documentation. This reduces technical debt and improves maintainability.</td>
+                          <td><span class="highlight">Less Flexibility:</span> While FDD is agile, its structured approach can be less flexible compared to other agile methodologies like Scrum, making it potentially challenging to accommodate significant changes mid-project.</td>
+                        </tr>
+                        <tr>
+                          <td><span class="highlight">Focused Development:</span> By concentrating on feature development, FDD ensures that development efforts are always aligned with delivering functional, customer-valued outcomes.</td>
+                          <td><span class="highlight">Resource Intensive:</span> The need for continuous inspections and rigorous design processes can be resource-intensive, requiring skilled personnel and additional time.</td>
+                        </tr>
+                        <tr>
+                          <td><span class="highlight">Team Collaboration:</span> The structured processes of FDD promote clear communication and collaboration among team members, as roles and responsibilities are well-defined.</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td><span class="highlight">Continuous Improvement:</span> The iterative nature of FDD allows for continuous improvement. Feedback from each iteration can be used to refine processes, designs, and implementation strategies.</td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </nb-accordion-item-body>
+                  
+                </nb-accordion-item>
+              </nb-accordion>
+        
+        
+            
+          </div>
+          <button nbButton disabled nbStepperNext>prev</button>
+          <button nbButton nbStepperNext>next</button>
+        </nb-step>
+        <nb-step label="What">
+          <ng-template #labelTwo>What</ng-template>
+          <div id="what" class="section">
+            <h2 class="section-title">What: Key Processes and Practices of Feature-Driven Development</h2>
+            <div class="fdd-processes">
+                <p class="highlighted">FDD consists of five main processes:</p>
+                <ol>
+                  <li><span class="highlight">Develop an Overall Model:</span> Establish a high-level understanding of the system by creating an overall model that serves as a foundation for subsequent feature development.</li>
+                  <li><span class="highlight">Build a Feature List:</span> Break down the overall model into a comprehensive list of features. Each feature should be a small, client-valued function that can be developed within a short period.</li>
+                  <li><span class="highlight">Plan by Feature:</span> Create a development plan based on the feature list. This plan should prioritize features based on their value and dependencies.</li>
+                  <li><span class="highlight">Design by Feature:</span> Design each feature in detail before implementation. This includes creating detailed design documents and conducting design inspections.</li>
+                  <li><span class="highlight">Build by Feature:</span> Implement and test each feature iteratively. This involves coding, unit testing, integration, and validation to ensure the feature works as intended.</li>
+                </ol>
+                <p>Key practices in FDD include domain object modeling, development by feature, inspections, configuration management, and regular builds.</p>
+                <img src="assets/images/fdd-feature-list.webp" alt="Feature List in FDD" class="responsive-image">
+              </div>
+              </div>
+          <button nbButton nbStepperPrevious>prev</button>
+          <button nbButton nbStepperNext>next</button>
+        </nb-step>
+        <nb-step label="How">
+            <div id="how" class="section">
+                <h2 class="section-title">How: Practical Application of FDD with Examples</h2>
+                <h3>Step-by-Step Application</h3>
+                <p>Let's explore the practical application of FDD through a step-by-step example of developing an e-commerce application.</p>
+                <img src="assets/images/e-commerce.jpg" alt="Overview of FDD" class="ecommerce responsive-image">
+
+                <h4>1. Develop an Overall Model</h4>
+                <p>Create an overall model that includes entities like <code>Customer</code>, <code>Order</code>, <code>Product</code>, and <code>Payment</code>. This model serves as a high-level blueprint for the system.</p>
+                <img src="assets/images/fdd-overall-model.png" alt="Overall Model in FDD" class="image">
+          
+                <h4>2. Build a Feature List</h4>
+                <p>Break down the e-commerce application into features. Examples of features include:</p>
+                <ul>
+                  <li><code>Add Product to Cart</code></li>
+                  <li><code>Process Payment</code></li>
+                  <li><code>Generate Invoice</code></li>
+                  <li><code>User Registration</code></li>
+                  <li><code>User Login</code></li>
+                </ul>
+          
+                <h4>3. Plan by Feature</h4>
+                <p>Create a development plan based on the feature list. Prioritize features such as <code>User Registration</code> and <code>User Login</code> to be developed first, followed by <code>Product Browsing</code> and <code>Shopping Cart Management</code>.</p>
+          
+                <h4>4. Design by Feature</h4>
+                <p>Design each feature in detail before implementation. For the <code>Add Product to Cart</code> feature, design the necessary UI components, backend logic, and database interactions. Conduct design inspections to ensure completeness and accuracy.</p>
+                <img src="assets/images/fdd-design-by-feature.png" alt="Design by Feature in FDD" class="image">
+          
+                <h4>5. Build by Feature</h4>
+                <p>Implement and test each feature iteratively. For the <code>Add Product to Cart</code> feature:</p>
+                <ul>
+                  <li>Write the required code for the UI and backend.</li>
+                  <li>Perform unit tests to ensure the feature works as intended.</li>
+                  <li>Integrate the feature with the existing system.</li>
+                  <li>Conduct acceptance tests to validate the feature.</li>
+                </ul>
+                <img src="assets/images/fdd-build-by-feature.png" alt="Build by Feature in FDD" class="image">
+              </div>
+          <button nbButton nbStepperPrevious>prev</button>
+          <button nbButton nbStepperNext>next</button>
+        </nb-step>
+        <nb-step label="What if">
+          <ng-template #labelFour>How</ng-template>
+          <div id="what-if" class="section">
+            <h2 class="section-title">What If: Adaptations of FDD for Different Projects</h2>
+            <p>Feature-Driven Development (FDD) is versatile and can be adapted to various types of projects, each with unique requirements and challenges. Here are some scenarios and how FDD can be tailored to fit them:</p>
+      
+            <h3>1. Large-Scale Enterprise Systems</h3>
+            <p>For large-scale enterprise systems, FDD’s structured and feature-centric approach helps manage complexity and ensures high-value features are delivered promptly. Adaptations might include:</p>
+            <ul>
+              <li><strong>Extended Planning:</strong> Detailed initial modeling and extended feature planning phases to accommodate the complexity of enterprise systems.</li>
+              <li><strong>Feature Teams:</strong> Creation of multiple feature teams to work on different parts of the system concurrently, ensuring parallel development streams.</li>
+              <li><strong>Integration Points:</strong> Frequent integration points to ensure that various components developed by different teams work together seamlessly.</li>
+            </ul>
+      
+            <h3>2. Startups and Small Projects</h3>
+            <p>Startups and small projects benefit from FDD’s focus on rapid delivery and customer-centric development. Adaptations might include:</p>
+            <ul>
+              <li><strong>Lightweight Modeling:</strong> Simplified initial modeling to quickly start feature development and iterate based on feedback.</li>
+              <li><strong>Minimal Documentation:</strong> Reducing the amount of documentation to maintain agility and speed, focusing instead on delivering working features.</li>
+              <li><strong>Flexible Planning:</strong> Adapting the planning phase to be more flexible and responsive to change, allowing for quick pivots based on market feedback.</li>
+            </ul>
+      
+            <h3>3. Legacy System Modernization</h3>
+            <p>When modernizing legacy systems, FDD can be used to incrementally add new features while refactoring existing code. Adaptations might include:</p>
+            <ul>
+              <li><strong>Incremental Refactoring:</strong> Incorporating refactoring tasks into the feature list to gradually improve the legacy codebase while adding new features.</li>
+              <li><strong>Backward Compatibility:</strong> Ensuring that new features maintain backward compatibility with existing systems until full migration is achieved.</li>
+              <li><strong>Risk Management:</strong> Close monitoring and management of risks associated with integrating new features into the legacy system.</li>
+            </ul>
+      
+            <h3>4. Distributed Teams</h3>
+            <p>For projects involving distributed teams, FDD’s clear structure and defined processes can help manage coordination and communication. Adaptations might include:</p>
+            <ul>
+              <li><strong>Clear Communication Channels:</strong> Establishing robust communication channels and tools to ensure consistent and clear communication across distributed teams.</li>
+              <li><strong>Regular Syncs:</strong> Scheduling regular synchronization meetings to keep all team members aligned and address any issues promptly.</li>
+              <li><strong>Distributed Version Control:</strong> Utilizing distributed version control systems to manage code contributions from multiple locations effectively.</li>
+            </ul>
+      
+            <h3>5. Regulated Industries</h3>
+            <p>In regulated industries, compliance and documentation are critical. FDD can be adapted to ensure that all regulatory requirements are met. Adaptations might include:</p>
+            <ul>
+              <li><strong>Comprehensive Documentation:</strong> Ensuring that all features are thoroughly documented to meet regulatory standards.</li>
+              <li><strong>Compliance Reviews:</strong> Incorporating compliance reviews into the design and build phases to ensure that all regulatory requirements are addressed early.</li>
+              <li><strong>Audit Trails:</strong> Maintaining detailed audit trails of all changes and feature implementations to provide transparency and accountability.</li>
+            </ul>
+      
+             </div>
+          <button nbButton nbStepperPrevious>prev</button>
+          <button nbButton  nbStepperNext>next</button>
+        </nb-step>
+        <nb-step label="Conclusion">
+            <ng-template #labelFour>What if</ng-template>
+            <h3>Conclusion</h3>
+            <p>Feature-Driven Development is a flexible and adaptable methodology that can be tailored to fit the needs of various projects and industries. By understanding the unique challenges and requirements of different scenarios, teams can effectively implement FDD to deliver high-value features in a structured and efficient manner.</p>
+        
+            <button nbButton nbStepperPrevious>prev</button>
+            <button nbButton disabled nbStepperNext>next</button>
+          </nb-step>
+          
+      </nb-stepper>
+ 

@@ -12,19 +12,24 @@ import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import {
+  NbAccordionModule,
   NbChatModule,
   NbDatepickerModule,
   NbDialogModule,
   NbMenuModule,
   NbSidebarModule,
+  NbStepperModule,
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
 import { FddComponent } from './pages/agile/fdd/fdd.component';
+import { StepperComponent } from '../assets/stepper/stepper.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, StepperComponent,FddComponent],
   imports: [
+    NbStepperModule,
+    NbAccordionModule,
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
