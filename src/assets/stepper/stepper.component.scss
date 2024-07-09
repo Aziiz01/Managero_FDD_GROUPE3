@@ -1,83 +1,76 @@
-.image {
-    margin-left: 0px; /* Optional, depending on your layout needs */
-  }
-  .ecommerce {
-height: 300px;
-width: 600px;
+.ecommerce {
+  height: 300px;
+  width: 600px;
 }
-  
-  .responsive-image {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-  .highlight {
-    font-weight: bold; /* Makes the text bold */
-    color: #7a03ad;    /* Changes the text color, adjust as needed */
-  }
-  .styled-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 1em;
-    font-family: 'Arial', sans-serif;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  }
-  
-  .styled-table thead tr {
-    background-color: #009879;
-    color: #ffffff;
-    text-align: left;
-  }
-  
-  .styled-table th,
-  .styled-table td {
-    padding: 12px 15px;
-  }
-  
-  .styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
-  }
-  
-  .styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-  }
-  
-  .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
-  }
-  .fdd-processes {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    margin: 20px;
-  }
-  
-  .fdd-processes p {
-    font-size: 1.2em;
-    color: #333;
-  }
-  
-  .fdd-processes ol {
-    padding-left: 20px;
-  }
-  
-  .fdd-processes li {
-    margin-bottom: 10px;
-  }
-  
-  .highlighted {
-    font-weight: bold;
-    color: #ff6600; /* Adjust the color as needed */
-    background-color: #ffffcc; /* Optional: add background color to highlight */
-    padding: 2px 4px;
-    border-radius: 4px; /* Optional: add rounded corners */
-  }
-  
-  .responsive-image {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px auto;
-  }
-  
+
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+.highlight {
+  font-weight: bold; /* Makes the text bold */
+  color: #7a03ad;    /* Changes the text color, adjust as needed */
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 1em;
+  font-family: 'Arial', sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.fdd-processes {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+
+.fdd-processes p {
+  font-size: 1.2em;
+  color: #333;
+}
+
+.fdd-processes ol {
+  padding-left: 20px;
+}
+
+.fdd-processes li {
+  margin-bottom: 10px;
+}
+
+.highlighted {
+  font-weight: bold;
+  color: #ff6600; /* Adjust the color as needed */
+  background-color: #ffffcc; /* Optional: add background color to highlight */
+  padding: 2px 4px;
+  border-radius: 4px; /* Optional: add rounded corners */
+}
