@@ -24,12 +24,16 @@ import {
 } from '@nebular/theme';
 import { FddComponent } from './pages/agile/fdd/fdd.component';
 import { StepperComponent } from '../assets/stepper/stepper.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, StepperComponent,FddComponent],
   imports: [
     NbStepperModule,
     NbAccordionModule,
+    AngularEditorModule,
+    FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
@@ -46,6 +50,7 @@ import { StepperComponent } from '../assets/stepper/stepper.component';
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
   ],
+  
   bootstrap: [AppComponent],
 })
 export class AppModule {

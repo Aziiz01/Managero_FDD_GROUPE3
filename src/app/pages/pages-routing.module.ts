@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { FddComponent } from './agile/fdd/fdd.component';
+import { MethodeDashboardComponent } from './methode-dashboard/methode-dashboard.component';
 
 const routes: Routes = [{
   path: '',
@@ -22,6 +23,10 @@ const routes: Routes = [{
     {
       path: 'fdd',
       component: FddComponent,
+    },
+    {
+      path: 'methodeDashboard',
+      component: MethodeDashboardComponent,
     },
     {
       path: 'layout',

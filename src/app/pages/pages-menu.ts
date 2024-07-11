@@ -7,7 +7,17 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'Feature-Driven Development (FDD)',
-        link: '/pages/fdd',
+        children: [
+          {
+          title: 'FDD',
+          link: '/pages/fdd',
+        },
+        {
+          title: 'Dashboard',
+          link: '/pages/methodeDashboard',
+        }
+        ]
+
       },
       {
         title: 'Scaled Agile Framework (SAFe)',
