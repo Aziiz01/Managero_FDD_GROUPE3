@@ -1,4 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { MethodeServiceService } from "../../../methode-service.service";
+import { first, map } from "rxjs/operators";
 
 @Component({
   selector: 'ngx-fdd',
@@ -8,3 +10,4 @@ import { Component } from "@angular/core";
 export class FddComponent {
 
 }
+

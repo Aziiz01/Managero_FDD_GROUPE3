@@ -2,14 +2,20 @@
       <nb-stepper orientation="horizontal">
         <nb-step label="Why">
           <ng-template #labelOne>Why</ng-template>
+         <div *ngIf="methode === null"> 
           <div id="introduction" class="section">
             <h2 class="section-title">Introduction to Feature-Driven Development (FDD)</h2>
             <p style="margin-top: 20px;">Feature-Driven Development (FDD) is an agile methodology that delivers working features systematically and incrementally. Unlike other agile methods, FDD focuses on a feature-centric approach to ensure prompt delivery of high-value features. This guide offers a detailed overview of FDD, including its benefits, limitations, key processes, and practical applications.</p>
             <img src="assets/images/fdd_overview.png" alt="Overview of FDD" class="responsive-image">
     
         </div>
-      
+      </div>
+      <div *ngIf="methode !== null"> 
+       {{methode.introduction}}
+    </div>
           <div style="margin-top: 20px;" id="why" class="section">
+            <div *ngIf="methode === null"> 
+
             <h2 style="margin-bottom: 20px;" class="section-title">Why: The Importance of Delivering High-Value Features Quickly</h2>
             <nb-accordion multi style="margin-bottom: 50px;">
                 <nb-accordion-item>
@@ -70,8 +76,10 @@
                 </nb-accordion-item>
               </nb-accordion>
         
-        
-            
+            </div>
+            <div *ngIf="methode !== null">
+              {{methode.why}} 
+</div>
           </div>
           <button nbButton disabled nbStepperNext>prev</button>
           <button nbButton nbStepperNext>next</button>
@@ -79,6 +87,8 @@
         <nb-step label="What">
           <ng-template #labelTwo>What</ng-template>
           <div id="what" class="section">
+            <div *ngIf="methode === null"> 
+
             <h2 class="section-title">What: Key Processes and Practices of Feature-Driven Development</h2>
             <div class="fdd-processes">
                 <p class="highlighted">FDD consists of five main processes:</p>
@@ -93,11 +103,17 @@
                 <img src="assets/images/fdd-feature-list.webp" alt="Feature List in FDD" class="responsive-image">
               </div>
               </div>
+              <div *ngIf="methode !== null"> 
+                {{methode.what}}
+</div>
+          </div>
           <button nbButton nbStepperPrevious>prev</button>
           <button nbButton nbStepperNext>next</button>
         </nb-step>
         <nb-step label="How">
             <div id="how" class="section">
+              <div *ngIf="methode === null"> 
+
                 <h2 class="section-title">How: Practical Application of FDD with Examples</h2>
                 <h3>Step-by-Step Application</h3>
                 <p>Let's explore the practical application of FDD through a step-by-step example of developing an e-commerce application.</p>
@@ -134,12 +150,18 @@
                 </ul>
                 <img src="assets/images/fdd-build-by-feature.png" alt="Build by Feature in FDD" class="image">
               </div>
+              <div *ngIf="methode !== null"> 
+                {{methode.how}}
+</div>
+            </div>
           <button nbButton nbStepperPrevious>prev</button>
           <button nbButton nbStepperNext>next</button>
         </nb-step>
         <nb-step label="What if">
           <ng-template #labelFour>How</ng-template>
           <div id="what-if" class="section">
+            <div *ngIf="methode === null"> 
+
             <h2 class="section-title">What If: Adaptations of FDD for Different Projects</h2>
             <p>Feature-Driven Development (FDD) is versatile and can be adapted to various types of projects, each with unique requirements and challenges. Here are some scenarios and how FDD can be tailored to fit them:</p>
       
@@ -182,7 +204,10 @@
               <li><strong>Compliance Reviews:</strong> Incorporating compliance reviews into the design and build phases to ensure that all regulatory requirements are addressed early.</li>
               <li><strong>Audit Trails:</strong> Maintaining detailed audit trails of all changes and feature implementations to provide transparency and accountability.</li>
             </ul>
-      
+      </div>
+      <div *ngIf="methode !== null"> 
+        {{methode.what_if}}
+      </div>
              </div>
           <button nbButton nbStepperPrevious>prev</button>
           <button nbButton  nbStepperNext>next</button>

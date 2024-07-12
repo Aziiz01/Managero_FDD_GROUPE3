@@ -25,7 +25,7 @@ import {
 import { FddComponent } from './pages/agile/fdd/fdd.component';
 import { StepperComponent } from '../assets/stepper/stepper.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, StepperComponent,FddComponent],
@@ -34,6 +34,7 @@ import { FormsModule } from '@angular/forms';
     NbAccordionModule,
     AngularEditorModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
