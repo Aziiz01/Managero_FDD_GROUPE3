@@ -26,9 +26,12 @@ import { FddComponent } from './pages/agile/fdd/fdd.component';
 import { StepperComponent } from '../assets/stepper/stepper.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
-  declarations: [AppComponent, StepperComponent,FddComponent],
+  declarations: [AppComponent, StepperComponent,FddComponent, ConfirmationDialogComponent],
   imports: [
     NbStepperModule,
     NbAccordionModule,
@@ -39,6 +42,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    MatIconModule,
+    MatButtonModule,
+    MatDialogModule,
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
     NbDatepickerModule.forRoot(),

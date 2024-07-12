@@ -26,7 +26,7 @@ createMethode(methodePayload : methodePayload) {
     return this.HttpClient.put(`${this.API_URL}/methode/update/${id}`, methodePayload)
    }
   
-   deleteMethod(id :string) {
+   deleteMethod(id : number) {
     return this.HttpClient.delete(`${this.API_URL}/method/delete/${id}`)
    }
 }
