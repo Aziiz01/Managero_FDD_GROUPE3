@@ -30,10 +30,14 @@ import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { RouterModule } from '@angular/router';
+import { EditComponent } from './edit/edit.component';
+
 @NgModule({
   declarations: [AppComponent, StepperComponent,FddComponent, ConfirmationDialogComponent],
   imports: [
     NbStepperModule,
+    RouterModule,
     NbAccordionModule,
     AngularEditorModule,
     FormsModule,

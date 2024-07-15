@@ -7,7 +7,8 @@
         <nb-step label="Introduction">
           <div class="section">
             <h2>Introduction:</h2>
-            <angular-editor [placeholder]="'Enter text here...'" formControlName="introduction" [config]="editorConfig"></angular-editor>
+            <angular-editor [placeholder]="'Enter text here...'"  formControlName="introduction" [config]="editorConfig"></angular-editor>
+
           </div>
         </nb-step>
         <nb-step label="How">
@@ -31,7 +32,13 @@
         <nb-step label="What if">
           <div class="section">
             <h2>What if:</h2>
-            <angular-editor [placeholder]="'Enter text here...'" formControlName="what_if" [config]="editorConfig"></angular-editor>
+            <angular-editor [placeholder]="'Enter text here...'" formControlName="whatif" [config]="editorConfig"></angular-editor>
+          </div>
+        </nb-step>
+        <nb-step label="conclusion">
+          <div class="section">
+            <h2>Conclusion:</h2>
+            <angular-editor [placeholder]="'Enter text here...'" formControlName="conclusion" [config]="editorConfig"></angular-editor>
             <button type="submit">
               <div class="svg-wrapper-1">
                 <div class="svg-wrapper">
@@ -52,6 +59,8 @@
             </button>
           </div>
         </nb-step>
+            
+         
       </nb-stepper>
     </form>
   </div>

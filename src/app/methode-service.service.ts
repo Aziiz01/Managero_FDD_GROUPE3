@@ -7,26 +7,26 @@ import { methodePayload } from './pages/methode-dashboard/methode.payload';
   providedIn: 'root'
 })
 export class MethodeServiceService {
-  readonly API_URL = 'http://localhost:8080'
+  readonly API_URL = 'http://localhost:8088'
 
   constructor(private HttpClient: HttpClient ) {
   }
 
-  getMethode(id: number) {
-    return this.HttpClient.get(`${this.API_URL}/methode/${id}`)
+  getMethode(id: string) {
+    return this.HttpClient.get(`${this.API_URL}/manajero/get/${id}`)
    }
    getMethodes() {
-    return this.HttpClient.get(`${this.API_URL}/getAllmethodes`)
+    return this.HttpClient.get(`${this.API_URL}/manajero/getAll`)
    }
 createMethode(methodePayload : methodePayload) {
-    return this.HttpClient.post(this.API_URL+'/methode/saveMethode', methodePayload)
+    return this.HttpClient.post(this.API_URL+'/manajero/add', methodePayload)
    }
 
    updateMethod (id :string,methodePayload : methodePayload) {
-    return this.HttpClient.put(`${this.API_URL}/methode/update/${id}`, methodePayload)
+    return this.HttpClient.put(`${this.API_URL}/manajero/update/${id}`, methodePayload)
    }
   
-   deleteMethod(id : number) {
-    return this.HttpClient.delete(`${this.API_URL}/method/delete/${id}`)
+   deleteMethod(id : string) {
+    return this.HttpClient.delete(`${this.API_URL}/manajero/delete/${id}`)
    }
 }

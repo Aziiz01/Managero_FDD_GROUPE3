@@ -1,22 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AngularEditorConfig, AngularEditorModule } from '@kolkov/angular-editor';
 import { NbStepperModule } from '@nebular/theme';
-import { methodePayload } from './methode.payload';
-import { MethodeServiceService } from '../../methode-service.service';
-import { first, map } from 'rxjs/operators';
-import { ActivatedRoute, Router } from '@angular/router';
 import { throwError } from 'rxjs';
+import { first, map } from 'rxjs/operators';
+import { methodePayload } from '../pages/methode-dashboard/methode.payload';
+import { MethodeServiceService } from '../methode-service.service';
 
 @Component({
-  selector: 'ngx-methode-dashboard',
-  templateUrl: './methode-dashboard.component.html',
-  styleUrls: ['./methode-dashboard.component.scss'],
+  selector: 'ngx-edit',
+  templateUrl: './edit.component.html',
+  styleUrls: ['./edit.component.scss'],
   standalone: true,
   imports: [AngularEditorModule , NbStepperModule, ReactiveFormsModule, FormsModule]  // Ensure this is an array
+
 })
-export class MethodeDashboardComponent implements OnInit {
- editorConfig: AngularEditorConfig = {
+export class EditComponent implements OnInit {
+  editorConfig: AngularEditorConfig = {
     editable: true,
     spellcheck: true,
     height: 'auto',
@@ -95,47 +96,39 @@ ngOnInit() {
       this.methode = firstMethode;
     });
 }
-createMethode() {
-  
+updateMethode() {
+  const introductionControl = this.createMethodeForm.get('introduction');
+  const whyControl = this.createMethodeForm.get('why');
+  const whatControl = this.createMethodeForm.get('what');
+  const howControl = this.createMethodeForm.get('how');
+  const whatifControl = this.createMethodeForm.get('whatif');
+  const conclusionControl = this.createMethodeForm.get('conclusion');
 
-    const introductionControl = this.createMethodeForm.get('introduction');
-    const whyControl = this.createMethodeForm.get('why');
-    const whatControl = this.createMethodeForm.get('what');
-    const howControl = this.createMethodeForm.get('how');
-    const whatifControl = this.createMethodeForm.get('whatif');
-    const conclusionControl = this.createMethodeForm.get('conclusion');
+  this.methodePayload.introduction = introductionControl?.value || '';
+  this.methodePayload.why = whyControl?.value || '';
+  this.methodePayload.what = whatControl?.value || '';
+  this.methodePayload.how = howControl?.value || '';
+  this.methodePayload.whatif = whatifControl?.value || '';
+  this.methodePayload.conclusion = conclusionControl?.value || '';
 
-    console.log(introductionControl.value)
-
-      this.methodePayload.introduction = introductionControl.value || '';
-      this.methodePayload.why = whyControl.value || '';
-      this.methodePayload.what = whatControl.value || '';
-      this.methodePayload.how = howControl.value || '';
-      this.methodePayload.whatif = whatifControl.value || '';
-      this.methodePayload.conclusion = conclusionControl.value || '';
-
-      this.methodeService.createMethode(this.methodePayload).subscribe(
-        data => {
-          if (data === null) {
-console.log("data is null error")
-          } else {
-            this.router.navigateByUrl('/pages/fdd');
-          }
-        },
-        
-        error => {
-          console.log(error);
-          if (error.error === null) {
-console.log("Error 555: Invalid content");
-          }
-          throwError(error);
-          console.error('Error creating methode:', error);
-        }
-      );
-    
-  
+  this.methodeService.updateMethod(this.methode.idMethode,this.methodePayload).subscribe(
+    data => {
+      if (data === null) {
+        console.log("data is null error");
+      } else {
+        this.router.navigateByUrl('/pages/fdd');
+      }
+    },
+    error => {
+      console.log(error);
+      if (error.error === null) {
+        console.log("Error 555: Invalid content");
+      }
+      throwError(error);
+      console.error('Error updating methode:', error);
+    }
+  );
 }
-
 
 
 }

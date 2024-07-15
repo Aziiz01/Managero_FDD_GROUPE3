@@ -1,18 +1,17 @@
 
       <nb-stepper orientation="horizontal">
-        <nb-step label="Why">
-          <ng-template #labelOne>Why</ng-template>
-         <div *ngIf="methode === null"> 
+        <nb-step label="Intoduction + Why">
+          <ng-template #labelOne>Intoduction + Why</ng-template>
+          <div *ngIf="methode === null"> 
           <div id="introduction" class="section">
             <h2 class="section-title">Introduction to Feature-Driven Development (FDD)</h2>
             <p style="margin-top: 20px;">Feature-Driven Development (FDD) is an agile methodology that delivers working features systematically and incrementally. Unlike other agile methods, FDD focuses on a feature-centric approach to ensure prompt delivery of high-value features. This guide offers a detailed overview of FDD, including its benefits, limitations, key processes, and practical applications.</p>
-            <img src="assets/images/fdd_overview.png" alt="Overview of FDD" class="responsive-image">
+            <img src="assets/images/diagram.png" alt="Overview of FDD" class="responsive-image">
     
         </div>
       </div>
-      <div *ngIf="methode !== null"> 
-       {{methode.introduction}}
-    </div>
+          <div *ngIf="methode !== null" [innerHTML]="methode.introduction"></div>
+
           <div style="margin-top: 20px;" id="why" class="section">
             <div *ngIf="methode === null"> 
 
@@ -77,9 +76,8 @@
               </nb-accordion>
         
             </div>
-            <div *ngIf="methode !== null">
-              {{methode.why}} 
-</div>
+            <div *ngIf="methode !== null" [innerHTML]="methode.why"></div>
+
           </div>
           <button nbButton disabled nbStepperNext>prev</button>
           <button nbButton nbStepperNext>next</button>
@@ -103,9 +101,8 @@
                 <img src="assets/images/fdd-feature-list.webp" alt="Feature List in FDD" class="responsive-image">
               </div>
               </div>
-              <div *ngIf="methode !== null"> 
-                {{methode.what}}
-</div>
+              <div *ngIf="methode !== null" [innerHTML]="methode.what"></div>
+
           </div>
           <button nbButton nbStepperPrevious>prev</button>
           <button nbButton nbStepperNext>next</button>
@@ -150,9 +147,8 @@
                 </ul>
                 <img src="assets/images/fdd-build-by-feature.png" alt="Build by Feature in FDD" class="image">
               </div>
-              <div *ngIf="methode !== null"> 
-                {{methode.how}}
-</div>
+              <div *ngIf="methode !== null" [innerHTML]="methode.how"></div>
+
             </div>
           <button nbButton nbStepperPrevious>prev</button>
           <button nbButton nbStepperNext>next</button>
@@ -205,18 +201,21 @@
               <li><strong>Audit Trails:</strong> Maintaining detailed audit trails of all changes and feature implementations to provide transparency and accountability.</li>
             </ul>
       </div>
-      <div *ngIf="methode !== null"> 
-        {{methode.what_if}}
-      </div>
+      <div *ngIf="methode !== null" [innerHTML]="methode.whatif"></div>
+
              </div>
           <button nbButton nbStepperPrevious>prev</button>
           <button nbButton  nbStepperNext>next</button>
         </nb-step>
         <nb-step label="Conclusion">
             <ng-template #labelFour>What if</ng-template>
+            <div *ngIf="methode === null"> 
+
             <h3>Conclusion</h3>
             <p>Feature-Driven Development is a flexible and adaptable methodology that can be tailored to fit the needs of various projects and industries. By understanding the unique challenges and requirements of different scenarios, teams can effectively implement FDD to deliver high-value features in a structured and efficient manner.</p>
-        
+            </div>
+            <div *ngIf="methode !== null" [innerHTML]="methode.conclusion"></div>
+
             <button nbButton nbStepperPrevious>prev</button>
             <button nbButton disabled nbStepperNext>next</button>
           </nb-step>

@@ -15,11 +15,12 @@ export class StepperComponent  implements OnInit{
 ngOnInit() {
   this.methodeService.getMethodes()
     .pipe(
-      map((data: any) => data[0]), // Extract the first method from the array
+      map((data: any) => data.length > 0 ? data[0] : null), // Check if data array has elements
       first() // Ensure we only take the first emitted value
     )
     .subscribe((firstMethode: any) => {
       this.methode = firstMethode;
     });
 }
+
 }

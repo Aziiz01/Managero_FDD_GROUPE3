@@ -1,9 +1,10 @@
 export class methodePayload {
-    idMethode? : number = 0;
+    idMethode? : string = '';
     introduction: string = '';
     why : string = '';
     what : string = '';
     how : string = '';
-    what_if : string = '';
+    whatif : string = '';
+    conclusion : string ='';
 
 }
