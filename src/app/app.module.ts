@@ -32,9 +32,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { RouterModule } from '@angular/router';
 import { EditComponent } from './edit/edit.component';
+import { EditdialogComponent } from './editdialog/editdialog.component';
 
 @NgModule({
-  declarations: [AppComponent, StepperComponent,FddComponent, ConfirmationDialogComponent],
+  declarations: [AppComponent, StepperComponent,FddComponent, ConfirmationDialogComponent, EditdialogComponent],
   imports: [
     NbStepperModule,
     RouterModule,

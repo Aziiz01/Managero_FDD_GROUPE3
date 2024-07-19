@@ -56,7 +56,21 @@ export class FddComponent implements OnInit {
       }
     });
   }
+  openEditDialog(id: string): void {
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      width: '300px',
+      data: {
+        title: 'Confirm Edit',
+        message: 'Are you sure you want to edit this method?',
+      },
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.router.navigateByUrl('/pages/edit');
+      }
+    });
+  }
   startEditing() {
     // Assuming this.methode is the object you want to pass
     
