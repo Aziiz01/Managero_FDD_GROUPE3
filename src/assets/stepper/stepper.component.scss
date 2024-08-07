@@ -74,3 +74,63 @@
   padding: 2px 4px;
   border-radius: 4px; /* Optional: add rounded corners */
 }
+.reviews {
+  padding: 20px;
+}
+
+.review {
+  display: flex;
+  justify-content: space-between; /* Space between content and actions */
+  align-items: flex-start; /* Align items at the top */
+  margin-bottom: 20px; /* Space between reviews */
+}
+
+.review-content {
+  flex: 1; /* Allow the content to take up remaining space */
+}
+
+.actions {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 10px; /* Space between buttons */
+  margin-left: 20px; /* Space between content and actions */
+}
+
+.actions button {
+  width: 100px; /* Adjust button width as needed */
+  text-align: center;
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Pushes the button to the right */
+  padding: 10px; /* Adjust as needed */
+}
+.cssbuttons-io-button {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.7em 1.4em 0.7em 1.1em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(0deg, rgba(20,167,62,1) 0%, rgba(102,247,113,1) 100%);
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+}
+
+.cssbuttons-io-button svg {
+  margin-right: 6px;
+}
+
+.cssbuttons-io-button:hover {
+  box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+}
+
+.cssbuttons-io-button:active {
+  box-shadow: 0 0.3em 1em -0.5em #14a73e98;
+}

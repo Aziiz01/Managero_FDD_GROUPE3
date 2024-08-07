@@ -20,7 +20,7 @@ import {
   NbSidebarModule,
   NbStepperModule,
   NbToastrModule,
-  NbWindowModule,
+  NbWindowModule, NbThemeModule, NbLayoutModule,
 } from '@nebular/theme';
 import { FddComponent } from './pages/agile/fdd/fdd.component';
 import { StepperComponent } from '../assets/stepper/stepper.component';
@@ -33,9 +33,13 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { RouterModule } from '@angular/router';
 import { EditComponent } from './edit/edit.component';
 import { EditdialogComponent } from './editdialog/editdialog.component';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { LikeModalComponent } from './like-modal/like-modal.component';
+import { PhasesComponent } from './pages/phases/phases.component';
+import { AllPhasesComponent } from './pages/all-phases/all-phases.component';
 
 @NgModule({
-  declarations: [AppComponent, StepperComponent,FddComponent, ConfirmationDialogComponent, EditdialogComponent],
+  declarations: [AppComponent, StepperComponent,FddComponent, ConfirmationDialogComponent, EditdialogComponent, LikeModalComponent, PhasesComponent, AllPhasesComponent],
   imports: [
     NbStepperModule,
     RouterModule,
@@ -61,6 +65,9 @@ import { EditdialogComponent } from './editdialog/editdialog.component';
     }),
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
+    NbThemeModule.forRoot({ name: 'default' }),
+    NbLayoutModule,
+    NbEvaIconsModule,
   ],
   
   bootstrap: [AppComponent],

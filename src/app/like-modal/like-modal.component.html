@@ -1,0 +1,20 @@
+<mat-dialog-content>
+    <div *ngIf="!submitted" class="feedback-container">
+      <h2 class="feedback-title">We Value Your Feedback!</h2>
+      <p class="feedback-description">Did you find the methodology useful and effective for your needs?</p>
+      <div class="feedback-buttons">
+        <button mat-raised-button color="primary" (click)="submitFeedback(true)">Yes</button>
+        <button mat-raised-button color="warn" (click)="submitFeedback(false)">No</button>
+      </div>
+    </div>
+  
+    <div *ngIf="submitted" class="thank-you-container">
+      <h2 class="thank-you-title">Thank You for Your Review!</h2>
+      <p class="thank-you-description">We appreciate your feedback and will use it to improve our methodology.</p>
+    </div>
+  </mat-dialog-content>
+  
+  <mat-dialog-actions>
+    <button mat-button *ngIf="submitted" (click)="closeDialog()">Close</button>
+  </mat-dialog-actions>
+  

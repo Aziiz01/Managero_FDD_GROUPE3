@@ -8,6 +8,8 @@ import { NotFoundComponent } from './miscellaneous/not-found/not-found.component
 import { FddComponent } from './agile/fdd/fdd.component';
 import { MethodeDashboardComponent } from './methode-dashboard/methode-dashboard.component';
 import { EditComponent } from '../edit/edit.component';
+import { PhasesComponent } from './phases/phases.component';
+import { AllPhasesComponent } from './all-phases/all-phases.component';
 
 const routes: Routes = [{
   path: '',
@@ -24,6 +26,14 @@ const routes: Routes = [{
     {
       path: 'fdd',
       component: FddComponent,
+    },
+    {
+      path: 'AllPhases',
+      component: AllPhasesComponent,
+    },
+    {
+      path: 'phases',
+      component: PhasesComponent,
     },
     {
       path: 'methodeDashboard',

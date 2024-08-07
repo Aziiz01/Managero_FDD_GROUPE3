@@ -208,14 +208,78 @@
           <button nbButton  nbStepperNext>next</button>
         </nb-step>
         <nb-step label="Conclusion">
-            <ng-template #labelFour>What if</ng-template>
-            <div *ngIf="methode === null"> 
-
+          <ng-template #labelFour>What if</ng-template>
+          <div *ngIf="methode === null"> 
             <h3>Conclusion</h3>
             <p>Feature-Driven Development is a flexible and adaptable methodology that can be tailored to fit the needs of various projects and industries. By understanding the unique challenges and requirements of different scenarios, teams can effectively implement FDD to deliver high-value features in a structured and efficient manner.</p>
-            </div>
-            <div *ngIf="methode !== null" [innerHTML]="methode.conclusion"></div>
-
+          </div>
+          <div *ngIf="methode !== null" [innerHTML]="methode.conclusion"></div>
+          <button nbButton nbStepperPrevious>prev</button>
+          <button nbButton nbStepperNext>next</button>
+        </nb-step>
+          <nb-step label="Review">
+            <ng-template #labelFour>Review</ng-template>
+            
+            <form [formGroup]="reviewForm" (ngSubmit)="addReview()">
+              <div class="form-group">
+                <label for="understanding">Do you fully understand the methodology?</label>
+                <input type="text" class="form-control" id="understanding" formControlName="understanding" placeholder="Your response" required>
+              </div>
+          
+              <div class="form-group">
+                <label for="recommendation">Do you recommend this methodology?</label>
+                <input type="text" class="form-control" id="recommendation" formControlName="recommendation" placeholder="Your response" required>
+              </div>
+          
+              <div class="form-group">
+                <label for="suggestions">Do you have any other suggestions or ideas?</label>
+                <textarea class="form-control" id="suggestions" formControlName="suggestions" rows="3" placeholder="Your suggestions" required></textarea>
+              </div>
+              <div class="button-container">
+                <button type="submit" class="cssbuttons-io-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path>
+                  </svg>
+                  <span>Add</span>
+                </button>
+              </div>
+                </form>
+          
+                <div class="reviews" *ngIf="reviews.length > 0">
+                  <h3>Previous Reviews:</h3>
+                  <div class="review" *ngFor="let review of reviews; let i = index">
+                    <div class="review-content" *ngIf="!review.editing">
+                      <p><strong>Understanding:</strong> {{ review.understanding }}</p>
+                      <p><strong>Recommendation:</strong> {{ review.recommendation }}</p>
+                      <p><strong>Suggestions:</strong> {{ review.suggestions }}</p>
+                    </div>
+                    <div class="review-content" *ngIf="review.editing">
+                      <div class="form-group">
+                        <label for="understanding">Do you fully understand the methodology?</label>
+                        <input type="text" class="form-control" [(ngModel)]="review.understanding" placeholder="Your response" required>
+                      </div>
+                
+                      <div class="form-group">
+                        <label for="recommendation">Do you recommend this methodology?</label>
+                        <input type="text" class="form-control" [(ngModel)]="review.recommendation" placeholder="Your response" required>
+                      </div>
+                
+                      <div class="form-group">
+                        <label for="suggestions">Do you have any other suggestions or ideas?</label>
+                        <textarea class="form-control" [(ngModel)]="review.suggestions" rows="3" placeholder="Your suggestions" required></textarea>
+                      </div>
+                    </div>
+                    <div class="actions">
+                      <button nbButton *ngIf="!review.editing" (click)="editReview(i)">Edit</button>
+                      <button nbButton *ngIf="!review.editing" (click)="deleteReview(i)">Delete</button>
+                      <button nbButton *ngIf="review.editing" (click)="saveReview(i)">Save</button>
+                      <button nbButton *ngIf="review.editing" (click)="cancelEdit(i)">Cancel</button>
+                    </div>
+                  </div>
+                </div>
+                
+          
             <button nbButton nbStepperPrevious>prev</button>
             <button nbButton disabled nbStepperNext>next</button>
           </nb-step>

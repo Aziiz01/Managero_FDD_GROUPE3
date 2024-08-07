@@ -1,0 +1,75 @@
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .card {
+    width: 300px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .card-header {
+    padding: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .card-header h3 {
+    margin: 0;
+  }
+  
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .header-actions nb-icon {
+    font-size: 1.5rem;
+    color: #007bff;
+  }
+  
+  .header-actions button {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    margin-left: 0.5rem;
+  }
+  
+  .card-body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .image-container {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .card-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #333;
+  }
+  
+  strong {
+    color: #007bff;
+  }
+  

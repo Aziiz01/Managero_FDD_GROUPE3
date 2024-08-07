@@ -1,0 +1,216 @@
+<nb-layout>
+    <nb-layout-column>
+      <div class="dashboard-container">
+        <div class="header-container">
+            <h1>FDD Methodology Dashboard</h1>
+            <div class="spacer"></div>
+
+            <button class="view" (click)="viewAll()">View All</button>
+          </div>  
+     <p>Manage your Feature-Driven Development process</p>
+
+        <nb-stepper orientation="horizontal" class="stepper">
+          <nb-step label="Overall Model">
+            <div class="section">
+              <h2>Develop an Overall Model</h2>
+              <form [formGroup]="overallModelForm" class="step-form">
+                <div class="form-group">
+                  <label>Upload Domain Object Model Diagram</label>
+                  <input nbInput type="file" (change)="onFileChange($event, 'domainModelDiagram')" />
+                </div>
+                <div class="form-group">
+                  <label>Modeling Sessions Notes</label>
+                  <textarea nbInput formControlName="modelingSessions"></textarea>
+                  <div *ngIf="overallModelForm.get('modelingSessions')?.invalid && (overallModelForm.get('modelingSessions')?.touched || overallModelForm.get('modelingSessions')?.dirty)" class="error-message">
+                    This field is required.
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Glossary of Terms</label>
+                  <textarea nbInput formControlName="glossaryTerms"></textarea>
+                  <div *ngIf="overallModelForm.get('glossaryTerms')?.invalid && (overallModelForm.get('glossaryTerms')?.touched || overallModelForm.get('glossaryTerms')?.dirty)" class="error-message">
+                    This field is required.
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Architectural Patterns</label>
+                  <input nbInput type="text" formControlName="architecturalPatterns" />
+                  <div *ngIf="overallModelForm.get('architecturalPatterns')?.invalid && (overallModelForm.get('architecturalPatterns')?.touched || overallModelForm.get('architecturalPatterns')?.dirty)" class="error-message">
+                    This field is required.
+                  </div>
+                </div>
+                <div class="button-container">
+                  <button nbButton status="primary" nbStepperNext>Next</button>
+                </div>
+              </form>
+            </div>
+          </nb-step>
+  
+          <!-- Similar code for other steps -->
+  
+          <nb-step label="Feature List">
+            <div class="section">
+              <h2>Build a Feature List</h2>
+              <form [formGroup]="featureListForm" class="step-form">
+                <div class="form-group">
+                  <label>Feature Identification</label>
+                  <textarea nbInput formControlName="featureIdentification"></textarea>
+                  <div *ngIf="featureListForm.get('featureIdentification')?.invalid && (featureListForm.get('featureIdentification')?.touched || featureListForm.get('featureIdentification')?.dirty)" class="error-message">
+                    This field is required.
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Feature Breakdown Structure</label>
+                  <textarea nbInput formControlName="featureBreakdown"></textarea>
+                  <div *ngIf="featureListForm.get('featureBreakdown')?.invalid && (featureListForm.get('featureBreakdown')?.touched || featureListForm.get('featureBreakdown')?.dirty)" class="error-message">
+                    This field is required.
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Feature Prioritization</label>
+                  <textarea nbInput formControlName="featurePrioritization"></textarea>
+                  <div *ngIf="featureListForm.get('featurePrioritization')?.invalid && (featureListForm.get('featurePrioritization')?.touched || featureListForm.get('featurePrioritization')?.dirty)" class="error-message">
+                    This field is required.
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Feature Description</label>
+                  <textarea nbInput formControlName="featureDescription"></textarea>
+                  <div *ngIf="featureListForm.get('featureDescription')?.invalid && (featureListForm.get('featureDescription')?.touched || featureListForm.get('featureDescription')?.dirty)" class="error-message">
+                    This field is required.
+                  </div>
+                </div>
+                <div class="button-container">
+                  <button nbButton status="primary" nbStepperPrevious>Previous</button>
+                  <button nbButton status="primary" nbStepperNext>Next</button>
+                </div>
+              </form>
+            </div>
+          </nb-step>
+  
+          <nb-step label="Plan by Feature">
+            <div class="section">
+              <h2>Plan by Feature</h2>
+              <form [formGroup]="planByFeatureForm" class="step-form">
+                <div class="form-group">
+                  <label>Feature Ownership</label>
+                  <input nbInput type="text" formControlName="featureOwnership" />
+                  <div *ngIf="planByFeatureForm.get('featureOwnership')?.invalid && (planByFeatureForm.get('featureOwnership')?.touched || planByFeatureForm.get('featureOwnership')?.dirty)" class="error-message">
+                    This field is required.
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Development Milestones</label>
+                  <input nbInput type="text" formControlName="developmentMilestones" />
+                  <div *ngIf="planByFeatureForm.get('developmentMilestones')?.invalid && (planByFeatureForm.get('developmentMilestones')?.touched || planByFeatureForm.get('developmentMilestones')?.dirty)" class="error-message">
+                    This field is required.
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Resource Allocation</label>
+                  <input nbInput type="text" formControlName="resourceAllocation" />
+                  <div *ngIf="planByFeatureForm.get('resourceAllocation')?.invalid && (planByFeatureForm.get('resourceAllocation')?.touched || planByFeatureForm.get('resourceAllocation')?.dirty)" class="error-message">
+                    This field is required.
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Risk Management</label>
+                  <textarea nbInput formControlName="riskManagement"></textarea>
+                  <div *ngIf="planByFeatureForm.get('riskManagement')?.invalid && (planByFeatureForm.get('riskManagement')?.touched || planByFeatureForm.get('riskManagement')?.dirty)" class="error-message">
+                    This field is required.
+                  </div>
+                </div>
+                <div class="button-container">
+                  <button nbButton status="primary" nbStepperPrevious>Previous</button>
+                  <button nbButton status="primary" nbStepperNext>Next</button>
+                </div>
+              </form>
+            </div>
+          </nb-step>
+  
+          <nb-step label="Design by Feature">
+            <div class="section">
+              <h2>Design by Feature</h2>
+              <form [formGroup]="designByFeatureForm" class="step-form">
+                <div class="form-group">
+                  <label>Upload Class Diagrams</label>
+                  <input nbInput type="file" (change)="onFileChange($event, 'classDiagrams')" />
+                </div>
+                <div class="form-group">
+                  <label>Upload Interaction Diagrams</label>
+                  <input nbInput type="file" (change)="onFileChange($event, 'interactionDiagrams')" />
+                </div>
+                <div class="form-group">
+                  <label>Design Review Notes</label>
+                  <textarea nbInput formControlName="designReviewNotes"></textarea>
+                  <div *ngIf="designByFeatureForm.get('designReviewNotes')?.invalid && (designByFeatureForm.get('designReviewNotes')?.touched || designByFeatureForm.get('designReviewNotes')?.dirty)" class="error-message">
+                    This field is required.
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Design Artifacts</label>
+                  <textarea nbInput formControlName="designArtifacts"></textarea>
+                  <div *ngIf="designByFeatureForm.get('designArtifacts')?.invalid && (designByFeatureForm.get('designArtifacts')?.touched || designByFeatureForm.get('designArtifacts')?.dirty)" class="error-message">
+                    This field is required.
+                  </div>
+                </div>
+                <div class="button-container">
+                  <button nbButton status="primary" nbStepperPrevious>Previous</button>
+                  <button nbButton status="primary" nbStepperNext>Next</button>
+                </div>
+              </form>
+            </div>
+          </nb-step>
+  
+          <nb-step label="Build by Feature">
+            <div class="section">
+              <h2>Build by Feature</h2>
+              <form [formGroup]="buildByFeatureForm" class="step-form">
+                <div class="form-group">
+                  <label>Implementation Tasks</label>
+                  <textarea nbInput formControlName="implementationTasks"></textarea>
+                  <div *ngIf="buildByFeatureForm.get('implementationTasks')?.invalid && (buildByFeatureForm.get('implementationTasks')?.touched || buildByFeatureForm.get('implementationTasks')?.dirty)" class="error-message">
+                    This field is required.
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Code Repository Links</label>
+                  <input nbInput type="text" formControlName="codeRepositoryLinks" />
+                  <div *ngIf="buildByFeatureForm.get('codeRepositoryLinks')?.invalid && (buildByFeatureForm.get('codeRepositoryLinks')?.touched || buildByFeatureForm.get('codeRepositoryLinks')?.dirty)" class="error-message">
+                    This field is required.
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Unit Tests</label>
+                  <textarea nbInput formControlName="unitTests"></textarea>
+                  <div *ngIf="buildByFeatureForm.get('unitTests')?.invalid && (buildByFeatureForm.get('unitTests')?.touched || buildByFeatureForm.get('unitTests')?.dirty)" class="error-message">
+                    This field is required.
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Code Review Notes</label>
+                  <textarea nbInput formControlName="codeReviewNotes"></textarea>
+                  <div *ngIf="buildByFeatureForm.get('codeReviewNotes')?.invalid && (buildByFeatureForm.get('codeReviewNotes')?.touched || buildByFeatureForm.get('codeReviewNotes')?.dirty)" class="error-message">
+                    This field is required.
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Integration Testing Notes</label>
+                  <textarea nbInput formControlName="integrationTestingNotes"></textarea>
+                  <div *ngIf="buildByFeatureForm.get('integrationTestingNotes')?.invalid && (buildByFeatureForm.get('integrationTestingNotes')?.touched || buildByFeatureForm.get('integrationTestingNotes')?.dirty)" class="error-message">
+                    This field is required.
+                  </div>
+                </div>
+                <div class="button-container">
+                  <button nbButton status="primary" nbStepperPrevious>Previous</button>
+                  <button nbButton status="success" (click)="submitForms()">Finish</button>
+                  <button nbButton status="danger" (click)="deleteProcess()">Delete</button>
+                </div>
+              </form>
+            </div>
+          </nb-step>
+        </nb-stepper>
+      </div>
+    </nb-layout-column>
+  </nb-layout>
+  

@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { methodePayload } from './pages/methode-dashboard/methode.payload';
+import { Process } from './pages/phases/process.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MethodeServiceService {
   readonly API_URL = 'http://localhost:8088'
+  readonly API_URLLL = 'http://localhost:8088/manajero/processes'
 
   constructor(private HttpClient: HttpClient ) {
   }
@@ -29,4 +31,33 @@ createMethode(methodePayload : methodePayload) {
    deleteMethod(id : string) {
     return this.HttpClient.delete(`${this.API_URL}/manajero/delete/${id}`)
    }
+//prcoess
+// Get a specific Process by ID
+getProcess(id: string): Observable<Process> {
+  return this.HttpClient.get<Process>(`${this.API_URLLL}/${id}`);
+}
+
+// Get all Processes
+getProcesses(): Observable<Process[]> {
+  return this.HttpClient.get<Process[]>(this.API_URLLL);
+}
+
+// Create a new Process
+createProcess(processPayload: Process): Observable<Process> {
+  return this.HttpClient.post<Process>(this.API_URLLL, processPayload);
+}
+
+// Update an existing Process
+updateProcess(id: string, processPayload: Process): Observable<Process> {
+  return this.HttpClient.put<Process>(`${this.API_URLLL}/${id}`, processPayload);
+}
+
+// Delete a Process by ID
+deleteProcess(id: string): Observable<void> {
+  return this.HttpClient.delete<void>(`${this.API_URLLL}/${id}`);
+}
+
+
+
+
 }

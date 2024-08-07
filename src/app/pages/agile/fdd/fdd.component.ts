@@ -5,6 +5,7 @@ import { throwError } from "rxjs";
 import { MatDialog } from "@angular/material/dialog";
 import { ConfirmationDialogComponent } from "../../../confirmation-dialog/confirmation-dialog.component";
 import { Router, NavigationExtras } from '@angular/router';
+import { PdfExportService } from "../../../pdf-export.service";
 
 @Component({
   selector: 'ngx-fdd',
@@ -15,7 +16,7 @@ export class FddComponent implements OnInit {
   methode: any;
   startedEditing: boolean = false;
 
-  constructor(private dialog: MatDialog, private methodeService: MethodeServiceService, private router: Router) {}
+  constructor(private dialog: MatDialog, private methodeService: MethodeServiceService, private router: Router,private pdfExportService: PdfExportService ) {}
 
   ngOnInit() {
     this.methodeService.getMethodes()
@@ -40,7 +41,11 @@ export class FddComponent implements OnInit {
       }
     );
   }
-
+  exportMethodeAsPDF() {
+    if (this.methode) {
+      this.pdfExportService.exportMethodeToPDF(this.methode, 'methodes.pdf');
+    }
+  }
   openDeleteConfirmationDialog(id: string): void {
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       width: '300px',
