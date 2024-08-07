@@ -1,168 +1,171 @@
 /* fdd-stepper.component.scss */
 :host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+nb-layout-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-container {
+  width: 1200px;
+  height: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  .header-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: center; /* Vertically centers items */
+    position: relative;
+    padding: 0 1rem; /* Optional: Adds padding on the left and right */
   }
-  
-  nb-layout-column {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+  .spacer {
+    flex: 1; /* Takes up remaining space to push the button to the extreme right */
   }
-  
+}
+
+.dashboard-container h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.dashboard-container p {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+}
+
+.stepper {
+  margin-top: 20px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.step-form {
+  display: flex;
+  flex-direction: column;
+
+  .form-group {
+    margin-bottom: 20px;
+
+    label {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    nb-input,
+    textarea {
+      width: 100%;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+  }
+}
+
+button {
+  font-family: inherit;
+  font-size: 20px;
+  background: #212121;
+  color: white;
+  fill: rgb(155, 153, 153);
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 15px;
+  font-weight: 1000;
+}
+
+button span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+button:hover {
+  background: #000;
+}
+
+button:hover .svg-wrapper {
+  transform: scale(1.25);
+  transition: 0.5s linear;
+}
+
+button:hover svg {
+  transform: translateX(1.2em) scale(1.1);
+  fill: #fff;
+}
+
+button:hover span {
+  opacity: 0;
+  transition: 0.5s linear;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 600px) {
   .dashboard-container {
-width:1200px ;
-    height: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    .header-container {
-        display: flex;
-        align-items: center; /* Vertically centers items */
-        position: relative;
-        padding: 0 1rem; /* Optional: Adds padding on the left and right */
-      }
-    
-      .spacer {
-        flex: 1; /* Takes up remaining space to push the button to the extreme right */
-      }
+    padding: 10px;
   }
-  
-  .dashboard-container h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .dashboard-container p {
-    text-align: center;
-    font-size: 18px;
-    color: #555;
-  }
-  
-  .stepper {
-    margin-top: 20px;
-  }
-  
-  .section {
-    margin-bottom: 20px;
-  }
-  
+
   .section h2 {
-    font-size: 20px;
-    color: #333;
-    margin-bottom: 10px;
+    font-size: 18px;
   }
-  
+
   .step-form {
-    display: flex;
-    flex-direction: column;
-  
     .form-group {
-      margin-bottom: 20px;
-  
+      margin-bottom: 15px;
+
+      textarea.ng-invalid.ng-touched,
+      input.ng-invalid.ng-touched {
+        border-color: #e74c3c; // Red border for invalid fields
+      }
+
+      .error-message {
+        color: #e74c3c; // Red text for error messages
+        font-size: 0.875rem;
+      }
+
       label {
-        margin-bottom: 5px;
-        font-weight: bold;
-      }
-  
-      nb-input,
-      textarea {
-        width: 100%;
-      }
-  
-      textarea {
-        resize: vertical;
+        font-size: 14px;
       }
     }
-  }
-  
-  button {
-    font-family: inherit;
-    font-size: 20px;
-    background: #212121;
-    color: white;
-    fill: rgb(155, 153, 153);
-    padding: 0.7em 1em;
-    padding-left: 0.9em;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    border: none;
-    border-radius: 15px;
-    font-weight: 1000;
-  }
-  
-  button span {
-    display: block;
-    margin-left: 0.3em;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  button svg {
-    display: block;
-    transform-origin: center center;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  button:hover {
-    background: #000;
-  }
-  
-  button:hover .svg-wrapper {
-    transform: scale(1.25);
-    transition: 0.5s linear;
-  }
-  
-  button:hover svg {
-    transform: translateX(1.2em) scale(1.1);
-    fill: #fff;
-  }
-  
-  button:hover span {
-    opacity: 0;
-    transition: 0.5s linear;
-  }
-  
-  button:active {
-    transform: scale(0.95);
-  }
-  
-  @media (max-width: 600px) {
-    .dashboard-container {
-      padding: 10px;
+
+    button {
+      font-size: 16px;
+      padding: 0.5em 0.8em;
     }
-  
-    .section h2 {
-      font-size: 18px;
-    }
-  
-    .step-form {
-      .form-group {
-        margin-bottom: 15px;
-        textarea.ng-invalid.ng-touched,
-        input.ng-invalid.ng-touched {
-          border-color: #e74c3c; // Red border for invalid fields
-        }
-    
-        .error-message {
-          color: #e74c3c; // Red text for error messages
-          font-size: 0.875rem;
-        }
-        label {
-          font-size: 14px;
-        }
-      }
-  
-      button {
-        font-size: 16px;
-        padding: 0.5em 0.8em;
-      }
-    }
-    
   }
-  
+}
+
+// Add an empty line at the end of the file
