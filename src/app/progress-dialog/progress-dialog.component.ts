@@ -16,17 +16,24 @@ export class ProgressDialogComponent implements OnInit {
   constructor(
     private methodeService: MethodeServiceService,
     public dialogRef: MatDialogRef<ProgressDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { process: Process }
+    @Inject(MAT_DIALOG_DATA) public data: Process // Directly typecast to Process
   ) {}
 
   ngOnInit() {
-    this.loadTasks();
+    if (this.data) {
+      this.loadTasks();
+    } else {
+      console.error('No process data provided');
+    }
   }
 
   loadTasks() {
-    this.toDoTasks = JSON.parse(localStorage.getItem('toDoTasks') || '[]');
-    this.inProgressTasks = JSON.parse(localStorage.getItem('inProgressTasks') || '[]');
-    this.doneTasks = JSON.parse(localStorage.getItem('doneTasks') || '[]');
+    if (this.data) {
+      // Directly access the properties of the data
+      this.toDoTasks = this.data.toDo || [];
+      this.inProgressTasks = this.data.inProgress || [];
+      this.doneTasks = this.data.done || [];
+    }
   }
 
   addTask(status: 'toDo' | 'inProgress' | 'done', task: string) {
@@ -35,9 +42,6 @@ export class ProgressDialogComponent implements OnInit {
     const tasks = this.getTasksByStatus(status);
     tasks.push(task);
     this.saveTasks();
-
-    // Clear input field
-    (document.querySelector(`#${status}TaskInput`) as HTMLInputElement).value = '';
   }
 
   deleteTask(status: 'toDo' | 'inProgress' | 'done', task: string) {
@@ -60,9 +64,25 @@ export class ProgressDialogComponent implements OnInit {
   }
 
   saveTasks() {
-    localStorage.setItem('toDoTasks', JSON.stringify(this.toDoTasks));
-    localStorage.setItem('inProgressTasks', JSON.stringify(this.inProgressTasks));
-    localStorage.setItem('doneTasks', JSON.stringify(this.doneTasks));
+    if (this.data) {
+      const updatedProcess: Process = {
+        ...this.data,
+        toDo: this.toDoTasks,
+        inProgress: this.inProgressTasks,
+        done: this.doneTasks
+      };
+
+      this.methodeService.updateProcess(this.data.idProcess,updatedProcess).subscribe(
+        () => {
+          console.log('Process updated successfully');
+        },
+        (error) => {
+          console.error('Error updating process:', error);
+        }
+      );
+    } else {
+      console.error('Process data is not defined');
+    }
   }
 
   closeDialog() {

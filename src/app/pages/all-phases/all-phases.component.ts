@@ -115,7 +115,7 @@ export class AllPhasesComponent implements OnInit {
       width: '600px',
       data: process
     });
-
+console.log(process)
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.updateProcess(result);
