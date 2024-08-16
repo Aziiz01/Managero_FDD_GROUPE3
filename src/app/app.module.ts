@@ -37,10 +37,15 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { LikeModalComponent } from './like-modal/like-modal.component';
 import { PhasesComponent } from './pages/phases/phases.component';
 import { AllPhasesComponent } from './pages/all-phases/all-phases.component';
+import { ProgressDialogComponent } from './progress-dialog/progress-dialog.component';
+import { TaskCompletionRateComponent } from './task-completion-rate/task-completion-rate.component';
+import { StatisticsComponent } from './pages/statistics/statistics.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
-  declarations: [AppComponent, StepperComponent,FddComponent, ConfirmationDialogComponent, EditdialogComponent, LikeModalComponent, PhasesComponent, AllPhasesComponent],
+  declarations: [AppComponent, StepperComponent,FddComponent, ConfirmationDialogComponent, EditdialogComponent, LikeModalComponent, PhasesComponent, AllPhasesComponent, ProgressDialogComponent, TaskCompletionRateComponent, StatisticsComponent],
   imports: [
+    NgxChartsModule,
     NbStepperModule,
     RouterModule,
     NbAccordionModule,

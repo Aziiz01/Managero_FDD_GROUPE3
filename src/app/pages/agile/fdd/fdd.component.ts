@@ -29,15 +29,15 @@ export class FddComponent implements OnInit {
       });
   }
 
-  deleteMethode(id: string) {
-    this.methodeService.deleteMethod(id).subscribe(
+  archiveMethode(id: string) {
+    this.methodeService.addMethodeToArchive(id).subscribe(
       () => {
         // Update your data or UI as necessary
         location.reload(); // Consider better ways to update UI or data
       },
       (error: any) => {
         throwError(error);
-        console.error('Error deleting method:', error);
+        console.error('Error archiving method:', error);
       }
     );
   }
@@ -51,13 +51,13 @@ export class FddComponent implements OnInit {
       width: '300px',
       data: {
         title: 'Confirm Deletion',
-        message: 'Are you sure you want to delete this method?',
+        message: 'Are you sure you want to send this method to the archive?',
       },
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.deleteMethode(id);
+        this.archiveMethode(id);
       }
     });
   }

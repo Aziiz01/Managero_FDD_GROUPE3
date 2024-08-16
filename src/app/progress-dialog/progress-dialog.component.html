@@ -1,0 +1,54 @@
+<h2 mat-dialog-title>Task Progress</h2>
+
+<mat-dialog-content>
+  <div class="progress-container">
+    <!-- To Do Column -->
+    <div class="progress-column">
+      <h3>To Do</h3>
+      <ul>
+        <li *ngFor="let task of toDoTasks">
+          {{ task }}
+          <button mat-icon-button (click)="deleteTask('toDo', task)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </li>
+      </ul>
+      <input #todoTaskInput type="text" placeholder="New task" />
+      <button mat-raised-button color="primary" (click)="addTask('toDo', todoTaskInput.value)">Add Task</button>
+    </div>
+
+    <!-- In Progress Column -->
+    <div class="progress-column">
+      <h3>In Progress</h3>
+      <ul>
+        <li *ngFor="let task of inProgressTasks">
+          {{ task }}
+          <button mat-icon-button (click)="deleteTask('inProgress', task)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </li>
+      </ul>
+      <input #inProgressTaskInput type="text" placeholder="New task" />
+      <button mat-raised-button color="primary" (click)="addTask('inProgress', inProgressTaskInput.value)">Add</button>
+    </div>
+
+    <!-- Done Column -->
+    <div class="progress-column">
+      <h3>Done</h3>
+      <ul>
+        <li *ngFor="let task of doneTasks">
+          {{ task }}
+          <button mat-icon-button (click)="deleteTask('done', task)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </li>
+      </ul>
+      <input #doneTaskInput type="text" placeholder="New task" />
+      <button mat-raised-button color="primary" (click)="addTask('done', doneTaskInput.value)">Add</button>
+    </div>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="closeDialog()">Close</button>
+</mat-dialog-actions>

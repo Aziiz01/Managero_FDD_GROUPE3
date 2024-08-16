@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { methodePayload } from './pages/methode-dashboard/methode.payload';
 import { Process } from './pages/phases/process.model';
+import { Archive } from './pages/archive-dashboard/archive.payload';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,11 @@ export class MethodeServiceService {
 
   constructor(private HttpClient: HttpClient ) {
   }
+  getTaskCompletionRate(processId: string): Observable<number> {
+    return this.HttpClient.get<number>(`${this.API_URLLL}/task-completion-rate/${processId}`);
+  }
+
+
 
   getMethode(id: string) {
     return this.HttpClient.get(`${this.API_URL}/manajero/get/${id}`)
@@ -56,8 +62,34 @@ updateProcess(id: string, processPayload: Process): Observable<Process> {
 deleteProcess(id: string): Observable<void> {
   return this.HttpClient.delete<void>(`${this.API_URLLL}/${id}`);
 }
+ // Archive a Process
+ addProcessToArchive(processId: string): Observable<any> {
+  return this.HttpClient.post(`${this.API_URL}/manajero/archive/addProcessToArchive/${processId}`, null);
+}
 
+// Archive a Methode
+addMethodeToArchive(methodeId: string): Observable<any> {
+  return this.HttpClient.post(`${this.API_URL}/manajero/archive/addMethodeToArchive/${methodeId}`, null);
+}
 
+// Delete an Archive by ID
+deleteFromArchive(idArchive: string): Observable<void> {
+  return this.HttpClient.delete<void>(`${this.API_URL}/manajero/archive/deleteFromArchive/${idArchive}`);
+}
+// New method for getting all archives
+getAllArchives(): Observable<Archive[]> {
+  return this.HttpClient.get<Archive[]>(`${this.API_URL}/manajero/archive/getAllArchives`);
+}
+
+// Restore a Process from Archive
+restoreProcessFromArchive(idArchive: string): Observable<void> {
+  return this.HttpClient.post<void>(`${this.API_URL}/manajero/archive/restoreProcessFromArchive/${idArchive}`, null);
+}
+
+// Restore a Methode from Archive
+restoreMethodeFromArchive(idArchive: string): Observable<void> {
+  return this.HttpClient.post<void>(`${this.API_URL}/manajero/archive/restoreMethodeFromArchive/${idArchive}`, null);
+}
 
 
 }

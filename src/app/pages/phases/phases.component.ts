@@ -117,6 +117,9 @@ export class PhasesComponent implements OnInit {
       ...this.planByFeatureForm.value,
       ...this.designByFeatureForm.value,
       ...this.buildByFeatureForm.value,
+      toDo : [],
+      inProgress : [],
+      done :[],
       idProcess: this.processId // Include the ID if editing
     };
 
@@ -135,7 +138,8 @@ export class PhasesComponent implements OnInit {
       this.methodeService.createProcess(processData).subscribe(
         response => {
           console.log('Process created successfully', response);
-          this.processId = response.idProcess; // Store ID for potential updates
+          this.processId = response.idProcess; 
+          this.router.navigateByUrl("/pages/AllPhases")
         },
         error => {
           console.error('Error creating process', error);
@@ -182,6 +186,6 @@ export class PhasesComponent implements OnInit {
     }
   }
   viewAll() {
-    this.router.navigateByUrl("/pages /AllPhases")
+    this.router.navigateByUrl("/pages/AllPhases")
   }
 }

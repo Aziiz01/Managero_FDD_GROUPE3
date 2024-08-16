@@ -10,6 +10,8 @@ import { MethodeDashboardComponent } from './methode-dashboard/methode-dashboard
 import { EditComponent } from '../edit/edit.component';
 import { PhasesComponent } from './phases/phases.component';
 import { AllPhasesComponent } from './all-phases/all-phases.component';
+import { ArchiveDashboardComponent } from './archive-dashboard/archive-dashboard.component';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 const routes: Routes = [{
   path: '',
@@ -23,6 +25,8 @@ const routes: Routes = [{
       path: 'iot-dashboard',
       component: DashboardComponent,
     },
+    { path: 'archives', component: ArchiveDashboardComponent},
+    { path: 'statistics', component: StatisticsComponent},
     {
       path: 'fdd',
       component: FddComponent,

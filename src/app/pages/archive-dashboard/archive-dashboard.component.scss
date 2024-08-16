@@ -1,0 +1,83 @@
+/* archive-dashboard.component.css */
+
+.archive-dashboard {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .archive-dashboard h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+  .archive-dashboard table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .archive-dashboard table th,
+  .archive-dashboard table td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+  }
+  
+  .archive-dashboard table th {
+    background-color: #007bff;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+  }
+  
+  .archive-dashboard table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .archive-dashboard button {
+    padding: 8px 12px;
+    margin: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .archive-dashboard button:hover {
+    background-color: #218838;
+  }
+  
+  .archive-dashboard button.restore-methode {
+    background-color: #17a2b8;
+  }
+  
+  .archive-dashboard button.restore-methode:hover {
+    background-color: #138496;
+  }
+  
+  .archive-dashboard button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
+  
+  .archive-dashboard p {
+    text-align: center;
+    color: #888;
+    font-size: 18px;
+  }
+  

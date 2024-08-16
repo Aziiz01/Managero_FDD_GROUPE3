@@ -1,50 +1,102 @@
 <nb-layout>
-    <nb-layout-column>
-      <div class="cards-container">
+  <nb-layout-column>
+    <h1 class="page-title">Process Management</h1>
+
+    <div class="cards-container">
+      <!-- Check if there are any processes -->
+      <div *ngIf="processes && processes.length > 0; else noProcesses">
         <div *ngFor="let process of processes" class="card">
           <div class="card-header" (click)="toggleDetails(process.idProcess)">
             <h3>{{ process.featureIdentification || 'No Title' }}</h3>
             <div class="header-actions">
-                <button nbButton status="danger" (click)="deleteProcess(process.idProcess)">Delete</button>
-                <nb-icon icon="arrow-ios-downward-outline" class="toggle-icon" *ngIf="!expandedProcessId || expandedProcessId !== process.idProcess"></nb-icon>
-                <nb-icon icon="arrow-ios-upward-outline" class="toggle-icon" *ngIf="expandedProcessId === process.idProcess"></nb-icon>
-              </div>   </div>
+              <button nbButton status="primary" (click)="toggleEditMode(process.idProcess)">Update</button>
+              <button nbButton status="danger" (click)="openDeleteConfirmationDialog(process.idProcess)">Archive</button>
+              <!-- Progress Button -->
+<button nbButton status="info" (click)="openProgressDialog(process)">Progress</button>
+
+              <nb-icon icon="arrow-ios-downward-outline" class="toggle-icon" *ngIf="!expandedProcessId || expandedProcessId !== process.idProcess"></nb-icon>
+              <nb-icon icon="arrow-ios-upward-outline" class="toggle-icon" *ngIf="expandedProcessId === process.idProcess"></nb-icon>
+            </div>
+          </div>
           <div class="card-body" *ngIf="expandedProcessId === process.idProcess">
-            <div class="image-container" *ngIf="process.domainModelDiagram">
+            <!-- Editable fields when in edit mode -->
+            <div *ngIf="editMode === process.idProcess; else viewMode">
+              <div class="image-container">
                 <strong>Modeling Sessions:</strong>
-              <img [src]="process.domainModelDiagram" alt="Domain Model Diagram" class="card-image" />
-            </div>
-            <div class="image-container" *ngIf="process.classDiagrams">
+                <input type="file" (change)="onFileSelected($event, 'domainModelDiagram', process)" />
+              </div>
+              <div class="image-container">
                 <strong>Class Diagrams:</strong>
-              <img [src]="process.classDiagrams" alt="Domain Model Diagram" class="card-image" />
-            </div>
-            <div class="image-container" *ngIf="process.interactionDiagrams">
+                <input type="file" (change)="onFileSelected($event, 'classDiagrams', process)" />
+              </div>
+              <div class="image-container">
                 <strong>Interaction Diagrams:</strong>
-              <img [src]="process.interactionDiagrams" alt="Domain Model Diagram" class="card-image" />
+                <input type="file" (change)="onFileSelected($event, 'interactionDiagrams', process)" />
+              </div>
+              
+              <p><strong>Feature Identification:</strong> <input nbInput [(ngModel)]="process.featureIdentification" /></p>
+              <p><strong>Modeling Sessions:</strong> <input nbInput [(ngModel)]="process.modelingSessions" /></p>
+              <p><strong>Glossary of Terms:</strong> <input nbInput [(ngModel)]="process.glossaryTerms" /></p>
+              <p><strong>Architectural Patterns:</strong> <input nbInput [(ngModel)]="process.architecturalPatterns" /></p>
+              <p><strong>Feature Breakdown:</strong> <input nbInput [(ngModel)]="process.featureBreakdown" /></p>
+              <p><strong>Feature Prioritization:</strong> <input nbInput [(ngModel)]="process.featurePrioritization" /></p>
+              <p><strong>Feature Description:</strong> <input nbInput [(ngModel)]="process.featureDescription" /></p>
+              <p><strong>Feature Ownership:</strong> <input nbInput [(ngModel)]="process.featureOwnership" /></p>
+              <p><strong>Development Milestones:</strong> <input nbInput [(ngModel)]="process.developmentMilestones" /></p>
+              <p><strong>Resource Allocation:</strong> <input nbInput [(ngModel)]="process.resourceAllocation" /></p>
+              <p><strong>Risk Management:</strong> <input nbInput [(ngModel)]="process.riskManagement" /></p>
+              <p><strong>Design Review Notes:</strong> <input nbInput [(ngModel)]="process.designReviewNotes" /></p>
+              <p><strong>Design Artifacts:</strong> <input nbInput [(ngModel)]="process.designArtifacts" /></p>
+              <p><strong>Implementation Tasks:</strong> <input nbInput [(ngModel)]="process.implementationTasks" /></p>
+              <p><strong>Code Repository Links:</strong> <input nbInput [(ngModel)]="process.codeRepositoryLinks" /></p>
+              <p><strong>Unit Tests:</strong> <input nbInput [(ngModel)]="process.unitTests" /></p>
+              <p><strong>Code Review Notes:</strong> <input nbInput [(ngModel)]="process.codeReviewNotes" /></p>
+              <p><strong>Integration Testing Notes:</strong> <input nbInput [(ngModel)]="process.integrationTestingNotes" /></p>
+
+              <button nbButton status="success" (click)="updateProcess(process)">Save</button>
+              <button nbButton status="info" (click)="toggleEditMode(null)">Cancel</button>
             </div>
-            <p *ngIf="process.modelingSessions"><strong>Modeling Sessions:</strong> {{ process.modelingSessions }}</p>
-            <p *ngIf="process.glossaryTerms"><strong>Glossary of Terms:</strong> {{ process.glossaryTerms }}</p>
-            <p *ngIf="process.architecturalPatterns"><strong>Architectural Patterns:</strong> {{ process.architecturalPatterns }}</p>
-            <p *ngIf="process.featureIdentification"><strong>Feature Identification:</strong> {{ process.featureIdentification }}</p>
-            <p *ngIf="process.featureBreakdown"><strong>Feature Breakdown:</strong> {{ process.featureBreakdown }}</p>
-            <p *ngIf="process.featurePrioritization"><strong>Feature Prioritization:</strong> {{ process.featurePrioritization }}</p>
-            <p *ngIf="process.featureDescription"><strong>Feature Description:</strong> {{ process.featureDescription }}</p>
-            <p *ngIf="process.featureOwnership"><strong>Feature Ownership:</strong> {{ process.featureOwnership }}</p>
-            <p *ngIf="process.developmentMilestones"><strong>Development Milestones:</strong> {{ process.developmentMilestones }}</p>
-            <p *ngIf="process.resourceAllocation"><strong>Resource Allocation:</strong> {{ process.resourceAllocation }}</p>
-            <p *ngIf="process.riskManagement"><strong>Risk Management:</strong> {{ process.riskManagement }}</p>
-            <p *ngIf="process.designReviewNotes"><strong>Design Review Notes:</strong> {{ process.designReviewNotes }}</p>
-            <p *ngIf="process.designArtifacts"><strong>Design Artifacts:</strong> {{ process.designArtifacts }}</p>
-            <p *ngIf="process.implementationTasks"><strong>Implementation Tasks:</strong> {{ process.implementationTasks }}</p>
-            <p *ngIf="process.codeRepositoryLinks"><strong>Code Repository Links:</strong> {{ process.codeRepositoryLinks }}</p>
-            <p *ngIf="process.unitTests"><strong>Unit Tests:</strong> {{ process.unitTests }}</p>
-            <p *ngIf="process.codeReviewNotes"><strong>Code Review Notes:</strong> {{ process.codeReviewNotes }}</p>
-            <p *ngIf="process.integrationTestingNotes"><strong>Integration Testing Notes:</strong> {{ process.integrationTestingNotes }}</p>
-         
-            <!-- Add more details as needed -->
+
+            <!-- Read-only view when not in edit mode -->
+            <ng-template #viewMode>
+              <div class="image-container" *ngIf="process.domainModelDiagram">
+                <strong>Modeling Sessions:</strong>
+                <img [src]="process.domainModelDiagram" alt="Domain Model Diagram" class="card-image" />
+              </div>
+              <div class="image-container" *ngIf="process.classDiagrams">
+                <strong>Class Diagrams:</strong>
+                <img [src]="process.classDiagrams" alt="Class Diagram" class="card-image" />
+              </div>
+              <div class="image-container" *ngIf="process.interactionDiagrams">
+                <strong>Interaction Diagrams:</strong>
+                <img [src]="process.interactionDiagrams" alt="Interaction Diagram" class="card-image" />
+              </div>
+              <p *ngIf="process.modelingSessions"><strong>Modeling Sessions:</strong> {{ process.modelingSessions }}</p>
+              <p *ngIf="process.glossaryTerms"><strong>Glossary of Terms:</strong> {{ process.glossaryTerms }}</p>
+              <p *ngIf="process.architecturalPatterns"><strong>Architectural Patterns:</strong> {{ process.architecturalPatterns }}</p>
+              <p *ngIf="process.featureIdentification"><strong>Feature Identification:</strong> {{ process.featureIdentification }}</p>
+              <p *ngIf="process.featureBreakdown"><strong>Feature Breakdown:</strong> {{ process.featureBreakdown }}</p>
+              <p *ngIf="process.featurePrioritization"><strong>Feature Prioritization:</strong> {{ process.featurePrioritization }}</p>
+              <p *ngIf="process.featureDescription"><strong>Feature Description:</strong> {{ process.featureDescription }}</p>
+              <p *ngIf="process.featureOwnership"><strong>Feature Ownership:</strong> {{ process.featureOwnership }}</p>
+              <p *ngIf="process.developmentMilestones"><strong>Development Milestones:</strong> {{ process.developmentMilestones }}</p>
+              <p *ngIf="process.resourceAllocation"><strong>Resource Allocation:</strong> {{ process.resourceAllocation }}</p>
+              <p *ngIf="process.riskManagement"><strong>Risk Management:</strong> {{ process.riskManagement }}</p>
+              <p *ngIf="process.designReviewNotes"><strong>Design Review Notes:</strong> {{ process.designReviewNotes }}</p>
+              <p *ngIf="process.designArtifacts"><strong>Design Artifacts:</strong> {{ process.designArtifacts }}</p>
+              <p *ngIf="process.implementationTasks"><strong>Implementation Tasks:</strong> {{ process.implementationTasks }}</p>
+              <p *ngIf="process.codeRepositoryLinks"><strong>Code Repository Links:</strong> {{ process.codeRepositoryLinks }}</p>
+              <p *ngIf="process.unitTests"><strong>Unit Tests:</strong> {{ process.unitTests }}</p>
+              <p *ngIf="process.codeReviewNotes"><strong>Code Review Notes:</strong> {{ process.codeReviewNotes }}</p>
+              <p *ngIf="process.integrationTestingNotes"><strong>Integration Testing Notes:</strong> {{ process.integrationTestingNotes }}</p>
+            </ng-template>
           </div>
         </div>
       </div>
-    </nb-layout-column>
-  </nb-layout>
-  
+      <!-- No processes message -->
+      <ng-template #noProcesses>
+        <p>No processes available.</p>
+      </ng-template>
+    </div>
+  </nb-layout-column>
+</nb-layout>

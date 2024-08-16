@@ -21,5 +21,8 @@ export interface Process {
     unitTests?: string;
     codeReviewNotes?: string;
     integrationTestingNotes?: string;
+    toDo? : string[];      
+    inProgress?: string[];      
+    done?: string[];      
   }
   

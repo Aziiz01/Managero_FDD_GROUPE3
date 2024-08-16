@@ -1,0 +1,40 @@
+<div class="archive-dashboard">
+    <h2>Archived Items</h2>
+    <div *ngIf="archives.length === 0">
+      <p>No archived items found.</p>
+    </div>
+    <div *ngIf="archives.length > 0">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let archive of archives">
+            <td>{{ archive.idArchive }}</td>
+            <td *ngIf="archive.content.idMethode">Methode {{ archive.content.idMethode }}</td>
+            <td>{{ archive.content.featureIdentification }}</td>
+
+            <td>
+              <button *ngIf="archive.content.idMethode" (click)="restoreMethode(archive.idArchive)">
+                Restore Methode
+              </button>
+              <button *ngIf="archive.content.featureIdentification" (click)="restoreProcess(archive.idArchive)">
+                Restore Process
+              </button>
+              <button *ngIf="archive.content.idMethode" (click)="openDeleteConfirmationDialog(archive.idArchive)">
+                Delete Methode
+              </button>
+              <button *ngIf="archive.content.featureIdentification" (click)="openDeleteConfirmationDialog(archive.idArchive)">
+                Delete Process
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

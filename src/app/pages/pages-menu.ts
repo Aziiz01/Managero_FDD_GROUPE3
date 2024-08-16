@@ -19,6 +19,14 @@ export const MENU_ITEMS: NbMenuItem[] = [
         {
           title: 'Phases',
           link: '/pages/phases',
+        },
+        {
+          title: 'Archive',
+          link: '/pages/archives',
+        },
+        {
+          title: 'Statistics',
+          link: '/pages/statistics',
         }
         ]
 

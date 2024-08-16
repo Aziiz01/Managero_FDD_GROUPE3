@@ -1,0 +1,43 @@
+/* progress-dialog.component.scss */
+.progress-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  
+  .progress-column {
+    width: 30%;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .progress-column h3 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
