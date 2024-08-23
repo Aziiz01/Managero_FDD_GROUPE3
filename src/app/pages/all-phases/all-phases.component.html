@@ -35,7 +35,6 @@
               </div>
               
               <p><strong>Feature Identification:</strong> <input nbInput [(ngModel)]="process.featureIdentification" /></p>
-              <p><strong>Modeling Sessions:</strong> <input nbInput [(ngModel)]="process.modelingSessions" /></p>
               <p><strong>Glossary of Terms:</strong> <input nbInput [(ngModel)]="process.glossaryTerms" /></p>
               <p><strong>Architectural Patterns:</strong> <input nbInput [(ngModel)]="process.architecturalPatterns" /></p>
               <p><strong>Feature Breakdown:</strong> <input nbInput [(ngModel)]="process.featureBreakdown" /></p>
@@ -71,7 +70,6 @@
                 <strong>Interaction Diagrams:</strong>
                 <img [src]="process.interactionDiagrams" alt="Interaction Diagram" class="card-image" />
               </div>
-              <p *ngIf="process.modelingSessions"><strong>Modeling Sessions:</strong> {{ process.modelingSessions }}</p>
               <p *ngIf="process.glossaryTerms"><strong>Glossary of Terms:</strong> {{ process.glossaryTerms }}</p>
               <p *ngIf="process.architecturalPatterns"><strong>Architectural Patterns:</strong> {{ process.architecturalPatterns }}</p>
               <p *ngIf="process.featureIdentification"><strong>Feature Identification:</strong> {{ process.featureIdentification }}</p>

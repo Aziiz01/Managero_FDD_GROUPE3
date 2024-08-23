@@ -41,9 +41,13 @@ import { ProgressDialogComponent } from './progress-dialog/progress-dialog.compo
 import { TaskCompletionRateComponent } from './task-completion-rate/task-completion-rate.component';
 import { StatisticsComponent } from './pages/statistics/statistics.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { ProgressComponent } from './progress/progress.component';
+import { DesignReviewComponent } from './design-review/design-review.component';
+import { DailyAdvancementComponent } from './daily-advancement/daily-advancement.component';
+import { RiskDetectionRateComponent } from './risk-detection-rate/risk-detection-rate.component';
 
 @NgModule({
-  declarations: [AppComponent, StepperComponent,FddComponent, ConfirmationDialogComponent, EditdialogComponent, LikeModalComponent, PhasesComponent, AllPhasesComponent, ProgressDialogComponent, TaskCompletionRateComponent, StatisticsComponent],
+  declarations: [AppComponent, StepperComponent,FddComponent, ConfirmationDialogComponent, EditdialogComponent, LikeModalComponent, PhasesComponent, AllPhasesComponent, ProgressDialogComponent, TaskCompletionRateComponent, StatisticsComponent, ProgressComponent, DesignReviewComponent, DailyAdvancementComponent, RiskDetectionRateComponent],
   imports: [
     NgxChartsModule,
     NbStepperModule,

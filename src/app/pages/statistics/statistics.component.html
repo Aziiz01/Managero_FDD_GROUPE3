@@ -1,10 +1,89 @@
 <div class="dashboard">
-    <h1>Project Dashboard</h1>
-    <!-- Other dashboard content -->
-  
-    <!-- Task Completion Rate Component -->
-    <ngx-task-completion-rate></ngx-task-completion-rate>
-  
-    <!-- Other components or content -->
+  <h1>Project Dashboard</h1>
+  <div class="small-cards-container">
+    <div class="small-card">
+      <i class="fas fa-project-diagram card-icon"></i>
+      <h4>Total Projects</h4>
+      <p>{{count}}</p>
+    </div>
+    <div class="small-card">
+      <i class="fas fa-check-circle card-icon"></i>
+      <h4>Tasks done</h4>
+      <p>{{doneTasksCount}}</p>
+    </div>
+    <div class="small-card">
+      <i class="fas fa-tasks card-icon"></i>
+      <h4>Remaining tasks</h4>
+      <p>{{toDoTasksCount}}</p>
+    </div>
   </div>
+
+  <div class="separator-line"></div>
+<!-- Process Details Table -->
+<div class="process-table-container">
+  <h3>Projects Details</h3>
+  <table class="process-table">
+    <thead>
+      <tr>
+        <th>#</th> <!-- Add a column for row numbers -->
+        <th>Feature Identification</th>
+        <th>Feature Description</th>
+        <th>Development Milestones</th>
+        <th>Design Review Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of getIndices(processes.length); let index = index" class="table-row">
+        <td>{{ index }}</td> <!-- Display row number -->
+        <td>{{ processes[i].featureIdentification }}</td>
+        <td>{{ processes[i].featureDescription }}</td>
+        <td>{{ processes[i].developmentMilestones }}</td>
+        <td>{{ processes[i].designReviewNotes }}</td>
+      </tr>
+    </tbody>
+  </table>
   
+</div>
+<div class="separator-line"></div>
+
+  <!-- Dropdown to select a process -->
+  <div class="dropdown-card">
+    <h4>Select a Project</h4>
+    <div class="process-dropdown">
+      <select [(ngModel)]="selectedProcessId" (change)="onProcessChange()">
+        <option *ngFor="let process of processes" [value]="process.idProcess">
+          {{ process.featureIdentification }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <ngx-design-review></ngx-design-review>
+  <div class="separator-line"></div>
+
+  <!-- Container for statistics -->
+  <div class="stats-container">
+    <!-- Task Completion Rate Component -->
+    <div class="stat-item">
+      <ngx-task-completion-rate></ngx-task-completion-rate>
+    </div>
+
+    <!-- Progress Component -->
+    <div class="stat-item">
+      <ngx-progress></ngx-progress>
+    </div>
+    
+
+    <!-- Design Review Effectiveness Component -->
+    
+
+    <!-- Daily Advancement Component -->
+    <div class="stat-item">
+      <ngx-daily-advancement></ngx-daily-advancement>
+    </div>
+    <div class="stat-item">
+
+      <ngx-risk-detection-rate></ngx-risk-detection-rate>
+      </div>
+  </div>
+</div>

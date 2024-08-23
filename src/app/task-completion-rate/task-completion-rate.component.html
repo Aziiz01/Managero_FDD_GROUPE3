@@ -1,26 +1,20 @@
 <div>
-    <label for="processSelect">Select Process:</label>
-    <select id="processSelect" (change)="onProcessChange($event.target.value)">
-      <option *ngFor="let process of processes" [value]="process.idProcess">
-        {{ process.featureIdentification }}
-      </option>
-    </select>
+  <h3>Task Completion Rate</h3>
+</div>
+<div *ngIf="!chartData.length">Loading...</div>
+<div *ngIf="chartData.length" style="display: flex; flex-direction: column; align-items: center;">
+  <ngx-charts-pie-chart
+    [view]="[400, 250]" 
+    [scheme]="colorScheme"
+    [results]="chartData"
+    [doughnut]="true"
+    [labels]="true"
+    [explodeSlices]="true"
+    [gradient]="false"
+    [showLegend]="false"
+    [showLabels]="true">
+  </ngx-charts-pie-chart>
+  <div class="chart-label">
+    Task Completion Rate: {{ taskCompletionRate }}%
   </div>
-  <div *ngIf="!chartData.length">Loading...</div>
-  <div *ngIf="chartData.length" style="display: flex; flex-direction: column; align-items: center;">
-    <ngx-charts-pie-chart
-      [view]="[400, 400]"
-      [scheme]="colorScheme"
-      [results]="chartData"
-      [doughnut]="true"
-      [labels]="true"
-      [explodeSlices]="true"
-      [gradient]="false"
-      [showLegend]="false"
-      [showLabels]="true">
-    </ngx-charts-pie-chart>
-    <div class="chart-label">
-      Task Completion Rate: {{ taskCompletionRate }}%
-    </div>
-  </div>
-  
+</div>

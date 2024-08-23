@@ -1,0 +1,49 @@
+.design-review-container {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .progress-bar-container {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .progress-bar {
+    height: 30px;
+    background-color: #4caf50;
+    color: white;
+    line-height: 30px;
+    text-align: center;
+    transition: width 0.5s ease-in-out;
+    border-radius: 5px 0 0 5px;
+  }
+  
+  .design-review-tooltip {
+   
+    font-size: 0.9rem;
+  }
+  
+  .tooltip-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .tooltip-label {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .tooltip-value {
+    color: #555;
+  }
+  

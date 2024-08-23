@@ -1,0 +1,21 @@
+<div class="progress-container">
+  <h3>Feature Implementation Progress</h3>
+
+  <!-- Vertical Bar Chart -->
+  <ngx-charts-bar-vertical
+    *ngIf="selectedProcessId"
+    [results]="chartData"
+    [view]="[250, 250]" 
+    [scheme]="colorScheme"
+    [gradient]="true"
+    [xAxis]="true"
+    [yAxis]="true"
+    [legend]="false"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    [yAxisLabel]="'Implementation Progress'">
+  </ngx-charts-bar-vertical>
+
+  <!-- Tooltip to show detailed information -->
+ 
+</div>

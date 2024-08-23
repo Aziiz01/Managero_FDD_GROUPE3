@@ -1,0 +1,22 @@
+<div class="design-review-container">
+  <h3>Design Review Effectiveness</h3>
+
+  <!-- Progress Bar -->
+  <div *ngIf="selectedProcessId" class="progress-bar-container">
+    <div class="progress-bar" [style.width.%]="designReviewProgress">
+      {{ designReviewProgress | number: '1.0-2' }}%
+    </div>
+  </div>
+
+  <!-- Tooltip to show detailed information -->
+  <div *ngIf="selectedProcessId" class="design-review-tooltip">
+    <div class="tooltip-item">
+      <span class="tooltip-label">Total Issues:</span>
+      <span class="tooltip-value">{{ totalIssues }}</span>
+    </div>
+    <div class="tooltip-item">
+      <span class="tooltip-label">Resolved Issues:</span>
+      <span class="tooltip-value">{{ resolvedIssues }}</span>
+    </div>
+  </div>
+</div>

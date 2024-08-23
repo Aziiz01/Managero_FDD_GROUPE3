@@ -1,0 +1,26 @@
+<div class="risk-detection-container">
+    <h3>Risk Detection Rate</h3>
+    
+    <div class="chart-label">
+      Risk Detection Rate: {{ riskDetectionRate }}%
+    </div>
+    
+    <!-- Check if there's data -->
+    <div *ngIf="!chartData.length">Loading...</div>
+    
+    <div *ngIf="chartData.length">
+      <ngx-charts-bar-horizontal
+        [view]="view"
+        [scheme]="colorScheme"
+        [results]="chartData"
+        [xAxis]="true"
+        [yAxis]="true"
+        [legend]="false"
+        [showXAxisLabel]="true"
+        [showYAxisLabel]="true"
+        [xAxisLabel]="'Detected Risks'"
+        [yAxisLabel]="'Risk Categories'"
+      ></ngx-charts-bar-horizontal>
+    </div>
+  </div>
+  
