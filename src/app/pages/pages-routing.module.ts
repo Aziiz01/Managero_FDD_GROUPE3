@@ -5,13 +5,13 @@ import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
-import { FddComponent } from './agile/fdd/fdd.component';
-import { MethodeDashboardComponent } from './methode-dashboard/methode-dashboard.component';
+import { FddComponent } from './fdd3_components/fdd/fdd.component';
+import { MethodeDashboardComponent } from './fdd3_components/methode-dashboard/methode-dashboard.component';
 import { EditComponent } from '../edit/edit.component';
-import { PhasesComponent } from './phases/phases.component';
-import { AllPhasesComponent } from './all-phases/all-phases.component';
-import { ArchiveDashboardComponent } from './archive-dashboard/archive-dashboard.component';
-import { StatisticsComponent } from './statistics/statistics.component';
+import { PhasesComponent } from './fdd3_components/phases/phases.component';
+import { AllPhasesComponent } from './fdd3_components/all-phases/all-phases.component';
+import { ArchiveDashboardComponent } from './fdd3_components/archive-dashboard/archive-dashboard.component';
+import { StatisticsComponent } from './fdd3_components/statistics/statistics.component';
 
 const routes: Routes = [{
   path: '',

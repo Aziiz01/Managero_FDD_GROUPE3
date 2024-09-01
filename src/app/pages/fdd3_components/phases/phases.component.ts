@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MethodeServiceService } from '../../methode-service.service';
-import { Process } from './process.model';
+import { MethodeServiceService } from '../../../core/services/methode-service.service';
+import { Process } from '../../../core/models/process.model';
 import { Router } from '@angular/router';
 
 @Component({

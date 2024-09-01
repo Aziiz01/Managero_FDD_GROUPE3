@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MethodeServiceService } from '../methode-service.service';
-import { SharedService } from '../shared.service';
+import { MethodeServiceService } from '../core/services/methode-service.service';
+import { SharedService } from '../core/services/shared.service';
 
 @Component({
   selector: 'ngx-daily-advancement',

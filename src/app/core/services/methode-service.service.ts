@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { methodePayload } from './pages/methode-dashboard/methode.payload';
-import { Process } from './pages/phases/process.model';
-import { Archive } from './pages/archive-dashboard/archive.payload';
+import { methodePayload } from '../models/methode.payload';
+import { Process } from '../models/process.model';
+import { Archive } from '../models/archive.payload';
 
 @Injectable({
   providedIn: 'root'

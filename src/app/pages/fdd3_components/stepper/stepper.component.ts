@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MethodeServiceService } from '../../app/methode-service.service';
+import { MethodeServiceService } from '../../../core/services/methode-service.service';
 import { first, map } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
 import { NbStepperComponent } from '@nebular/theme';
-import { LikeModalComponent } from '../../app/like-modal/like-modal.component';
-import { PdfExportService } from '../../app/pdf-export.service'; // Import your service
+import { LikeModalComponent } from '../../../like-modal/like-modal.component';
+import { PdfExportService } from '../../../core/services/pdf-export.service';
 
 @Component({
   selector: 'ngx-stepper',

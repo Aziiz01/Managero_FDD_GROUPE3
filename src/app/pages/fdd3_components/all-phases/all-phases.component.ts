@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { MethodeServiceService } from '../../methode-service.service';
-import { Process } from '../phases/process.model';
+import { MethodeServiceService } from '../../../core/services/methode-service.service';
+import { Process } from '../../../core/models/process.model';
 import { MatDialog } from '@angular/material/dialog';
-import { ConfirmationDialogComponent } from '../../confirmation-dialog/confirmation-dialog.component';
-import { ProgressDialogComponent } from '../../progress-dialog/progress-dialog.component';
+import { ConfirmationDialogComponent } from '../../../confirmation-dialog/confirmation-dialog.component';
+import { ProgressDialogComponent } from '../progress-dialog/progress-dialog.component';
 
 @Component({
   selector: 'ngx-all-phases',

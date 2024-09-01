@@ -1,10 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AllPhasesComponent } from './all-phases.component';
-import { MethodeServiceService } from '../../methode-service.service';
+import { MethodeServiceService } from '../../../core/services/methode-service.service';
 import { MatDialog } from '@angular/material/dialog';
 import { of, throwError } from 'rxjs';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { Process } from '../phases/process.model';
+import { Process } from '../../../core/models/process.model';
 
 describe('AllPhasesComponent', () => {
   let component: AllPhasesComponent;

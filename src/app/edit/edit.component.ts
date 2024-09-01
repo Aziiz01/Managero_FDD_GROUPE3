@@ -5,8 +5,8 @@ import { AngularEditorConfig, AngularEditorModule } from '@kolkov/angular-editor
 import { NbStepperModule } from '@nebular/theme';
 import { throwError } from 'rxjs';
 import { first, map } from 'rxjs/operators';
-import { methodePayload } from '../pages/methode-dashboard/methode.payload';
-import { MethodeServiceService } from '../methode-service.service';
+import { methodePayload } from '../core/models/methode.payload';
+import { MethodeServiceService } from '../core/services/methode-service.service';
 
 @Component({
   selector: 'ngx-edit',
