@@ -3,7 +3,7 @@ import { MethodeServiceService } from "../../../core/services/FDDG3_services/met
 import { first, map } from "rxjs/operators";
 import { throwError } from "rxjs";
 import { MatDialog } from "@angular/material/dialog";
-import { ConfirmationDialogComponent } from "../../../confirmation-dialog/confirmation-dialog.component";
+import { ConfirmationDialogComponent } from "../confirmation-dialog/confirmation-dialog.component";
 import { Router, NavigationExtras } from '@angular/router';
 import { PdfExportService } from "../../../core/services/FDDG3_services/pdf-export.service";
 

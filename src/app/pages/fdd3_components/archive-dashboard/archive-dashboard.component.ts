@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Archive } from '../../../core/models/FDDG3_models/archive.payload';
 import { MethodeServiceService } from '../../../core/services/FDDG3_services/methode-service.service';
-import { ConfirmationDialogComponent } from '../../../confirmation-dialog/confirmation-dialog.component';
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
