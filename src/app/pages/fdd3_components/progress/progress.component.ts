@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MethodeServiceService } from '../../../core/services/methode-service.service';
-import { SharedService } from '../../../core/services/shared.service';
+import { MethodeServiceService } from '../../../core/services/FDDG3_services/methode-service.service';
+import { SharedService } from '../../../core/services/FDDG3_services/shared.service';
 
 @Component({
   selector: 'ngx-progress',

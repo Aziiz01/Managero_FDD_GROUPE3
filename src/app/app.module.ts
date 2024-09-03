@@ -31,10 +31,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { RouterModule } from '@angular/router';
-import { EditComponent } from './edit/edit.component';
-import { EditdialogComponent } from './editdialog/editdialog.component';
+import { EditComponent } from './pages/fdd3_components/edit/edit.component';
+import { EditdialogComponent } from './pages/fdd3_components/editdialog/editdialog.component';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { LikeModalComponent } from './like-modal/like-modal.component';
+import { LikeModalComponent } from './pages/fdd3_components/like-modal/like-modal.component';
 import { PhasesComponent } from './pages/fdd3_components/phases/phases.component';
 import { AllPhasesComponent } from './pages/fdd3_components/all-phases/all-phases.component';
 import { ProgressDialogComponent } from './pages/fdd3_components/progress-dialog/progress-dialog.component';
@@ -42,8 +42,8 @@ import { TaskCompletionRateComponent } from './pages/fdd3_components/task-comple
 import { StatisticsComponent } from './pages/fdd3_components/statistics/statistics.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { ProgressComponent } from './pages/fdd3_components/progress/progress.component';
-import { DesignReviewComponent } from './design-review/design-review.component';
-import { DailyAdvancementComponent } from './daily-advancement/daily-advancement.component';
+import { DesignReviewComponent } from './pages/fdd3_components/design-review/design-review.component';
+import { DailyAdvancementComponent } from './pages/fdd3_components/daily-advancement/daily-advancement.component';
 import { RiskDetectionRateComponent } from './pages/fdd3_components/risk-detection-rate/risk-detection-rate.component';
 
 @NgModule({

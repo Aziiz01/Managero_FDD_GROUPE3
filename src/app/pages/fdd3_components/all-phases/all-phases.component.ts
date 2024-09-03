@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MethodeServiceService } from '../../../core/services/methode-service.service';
-import { Process } from '../../../core/models/process.model';
+import { MethodeServiceService } from '../../../core/services/FDDG3_services/methode-service.service';
+import { Process } from '../../../core/models/FDDG3_models/process.model';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from '../../../confirmation-dialog/confirmation-dialog.component';
 import { ProgressDialogComponent } from '../progress-dialog/progress-dialog.component';

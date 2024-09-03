@@ -7,7 +7,7 @@ import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { FddComponent } from './fdd3_components/fdd/fdd.component';
 import { MethodeDashboardComponent } from './fdd3_components/methode-dashboard/methode-dashboard.component';
-import { EditComponent } from '../edit/edit.component';
+import { EditComponent } from './fdd3_components/edit/edit.component';
 import { PhasesComponent } from './fdd3_components/phases/phases.component';
 import { AllPhasesComponent } from './fdd3_components/all-phases/all-phases.component';
 import { ArchiveDashboardComponent } from './fdd3_components/archive-dashboard/archive-dashboard.component';

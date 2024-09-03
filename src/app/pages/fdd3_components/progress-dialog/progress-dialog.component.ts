@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { Process } from '../../../core/models/process.model';
-import { MethodeServiceService } from '../../../core/services/methode-service.service';
+import { Process } from '../../../core/models/FDDG3_models/process.model';
+import { MethodeServiceService } from '../../../core/services/FDDG3_services/methode-service.service';
 
 @Component({
   selector: 'ngx-progress-dialog',

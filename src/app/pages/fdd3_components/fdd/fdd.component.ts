@@ -1,11 +1,11 @@
 import { Component, OnInit } from "@angular/core";
-import { MethodeServiceService } from "../../../core/services/methode-service.service";
+import { MethodeServiceService } from "../../../core/services/FDDG3_services/methode-service.service";
 import { first, map } from "rxjs/operators";
 import { throwError } from "rxjs";
 import { MatDialog } from "@angular/material/dialog";
 import { ConfirmationDialogComponent } from "../../../confirmation-dialog/confirmation-dialog.component";
 import { Router, NavigationExtras } from '@angular/router';
-import { PdfExportService } from "../../../core/services/pdf-export.service";
+import { PdfExportService } from "../../../core/services/FDDG3_services/pdf-export.service";
 
 @Component({
   selector: 'ngx-fdd',
