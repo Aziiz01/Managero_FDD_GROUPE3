@@ -10,7 +10,7 @@ import { Archive } from '../../models/FDDG3_models/archive.payload';
 })
 export class MethodeServiceService {
   readonly API_URL = 'http://localhost:8088'
-  readonly API_URLLL = 'http://localhost:8088/ManajeroBackend/processes'
+  readonly API_URLLL = 'http://localhost:8088/manajero/processes'
 
   constructor(private HttpClient: HttpClient ) {
   }
@@ -21,21 +21,21 @@ export class MethodeServiceService {
 
 
   getMethode(id: string) {
-    return this.HttpClient.get(`${this.API_URL}/ManajeroBackend/get/${id}`)
+    return this.HttpClient.get(`${this.API_URL}/manajero/get/${id}`)
    }
    getMethodes() {
-    return this.HttpClient.get(`${this.API_URL}/ManajeroBackend/getAll`)
+    return this.HttpClient.get(`${this.API_URL}/manajero/getAll`)
    }
 createMethode(methodePayload : methodePayload) {
-    return this.HttpClient.post(this.API_URL+'/ManajeroBackend/add', methodePayload)
+    return this.HttpClient.post(this.API_URL+'/manajero/add', methodePayload)
    }
 
    updateMethod (id :string,methodePayload : methodePayload) {
-    return this.HttpClient.put(`${this.API_URL}/ManajeroBackend/update/${id}`, methodePayload)
+    return this.HttpClient.put(`${this.API_URL}/manajero/update/${id}`, methodePayload)
    }
   
    deleteMethod(id : string) {
-    return this.HttpClient.delete(`${this.API_URL}/ManajeroBackend/delete/${id}`)
+    return this.HttpClient.delete(`${this.API_URL}/manajero/delete/${id}`)
    }
 //prcoess
 // Get a specific Process by ID
@@ -64,31 +64,31 @@ deleteProcess(id: string): Observable<void> {
 }
  // Archive a Process
  addProcessToArchive(processId: string): Observable<any> {
-  return this.HttpClient.post(`${this.API_URL}/ManajeroBackend/archive/addProcessToArchive/${processId}`, null);
+  return this.HttpClient.post(`${this.API_URL}/manajero/archive/addProcessToArchive/${processId}`, null);
 }
 
 // Archive a Methode
 addMethodeToArchive(methodeId: string): Observable<any> {
-  return this.HttpClient.post(`${this.API_URL}/ManajeroBackend/archive/addMethodeToArchive/${methodeId}`, null);
+  return this.HttpClient.post(`${this.API_URL}/manajero/archive/addMethodeToArchive/${methodeId}`, null);
 }
 
 // Delete an Archive by ID
 deleteFromArchive(idArchive: string): Observable<void> {
-  return this.HttpClient.delete<void>(`${this.API_URL}/ManajeroBackend/archive/deleteFromArchive/${idArchive}`);
+  return this.HttpClient.delete<void>(`${this.API_URL}/manajero/archive/deleteFromArchive/${idArchive}`);
 }
 // New method for getting all archives
 getAllArchives(): Observable<Archive[]> {
-  return this.HttpClient.get<Archive[]>(`${this.API_URL}/ManajeroBackend/archive/getAllArchives`);
+  return this.HttpClient.get<Archive[]>(`${this.API_URL}/manajero/archive/getAllArchives`);
 }
 
 // Restore a Process from Archive
 restoreProcessFromArchive(idArchive: string): Observable<void> {
-  return this.HttpClient.post<void>(`${this.API_URL}/ManajeroBackend/archive/restoreProcessFromArchive/${idArchive}`, null);
+  return this.HttpClient.post<void>(`${this.API_URL}/manajero/archive/restoreProcessFromArchive/${idArchive}`, null);
 }
 
 // Restore a Methode from Archive
 restoreMethodeFromArchive(idArchive: string): Observable<void> {
-  return this.HttpClient.post<void>(`${this.API_URL}/ManajeroBackend/archive/restoreMethodeFromArchive/${idArchive}`, null);
+  return this.HttpClient.post<void>(`${this.API_URL}/manajero/archive/restoreMethodeFromArchive/${idArchive}`, null);
 }
 
 
